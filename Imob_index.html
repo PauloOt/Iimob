@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ═══════════════════════════════════════════════
+       SEO — EDITE AQUI PARA PERSONALIZAR
+  ════════════════════════════════════════════════ -->
+  <title>I.Imob — Investimento Imobiliário</title>
+  <meta name="description" content="Consultoria imobiliária especializada em imóveis residenciais e de investimento. Encontre seu imóvel ideal com a I.Imob." />
+  <meta name="keywords"    content="imóveis, consultora imobiliária, comprar imóvel, apartamento, casa" />
+  <!-- Open Graph (WhatsApp / redes sociais) -->
+  <meta property="og:title"       content="I.Imob — Investimento Imobiliário" />
+  <meta property="og:description" content="Consultoria imobiliária especializada. Seu patrimônio, sua herança." />
+  <meta property="og:type"        content="website" />
+  <!-- Troque pela URL real do site:
+  <meta property="og:url"         content="https://www.iimob.com.br" />
+  <meta property="og:image"       content="https://www.iimob.com.br/og-image.jpg" />
+  -->
+
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/StyleSheets/style_Imob.css" />
+</head>
+<body>
+
+<!-- ════════════ CURSOR ════════════ -->
+<div class="cursor-dot"  id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ════════════════════════════════════════════
+     NAVEGAÇÃO
+     Para adicionar/remover links: edite as <li>
+════════════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#inicio" class="nav-logo">I<span>.</span>Imob</a>
+
+  <!-- MENU DESKTOP -->
+  <ul class="nav-links">
+    <li><a href="#imoveis">Imóveis</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#contato" class="nav-cta">Falar com Consultora</a></li>
+  </ul>
+
+  <!-- BOTÃO MENU MOBILE -->
+  <button class="nav-hamburger" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENU MOBILE -->
+<div id="mobileMenu">
+  <a href="#imoveis">Imóveis</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#depoimentos">Depoimentos</a>
+  <a href="#contato">Contato</a>
+</div>
+
+<!-- ════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-overlay"></div>
+
+  <!-- CONTEÚDO ESQUERDO -->
+  <div class="hero-content">
+    <!-- Edite o eyebrow -->
+    <p class="hero-eyebrow">Investimento Imobiliário · Desde ...</p>
+
+    <!-- Edite o título principal -->
+    <h1 class="hero-title">
+      Seu patrimônio,<br>
+      <em>sua herança.</em>
+    </h1>
+
+    <!-- Edite a descrição -->
+    <p class="hero-desc">
+      Consultoria imobiliária especializada em imóveis residenciais e de
+      investimento. Da busca à escritura, cada detalhe cuidado com excelência
+      e dedicação pessoal.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#imoveis"  class="btn-primary"><span>Ver Imóveis</span></a>
+      <a href="#contato" class="btn-outline">Falar com a Consultora</a>
+    </div>
+  </div>
+
+  <!-- FOTO DA CONSULTORA — LADO DIREITO -->
+  <div class="hero-photo-side">
+    <div class="hero-photo-frame">
+
+      <!--
+        ★ TROCAR FOTO DA CONSULTORA ★
+        Substitua o conteúdo abaixo por:
+        <img id="fotoConsultora" src="fotos/consultora-principal.jpg"
+             alt="[Nome da Consultora] — I.Imob" class="img-zoom" />
+        e remova o .foto-placeholder
+      -->
+      <div class="foto-placeholder">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>Foto da Consultora<br>600 × 900 px</span>
+      </div>
+
+      <!-- Badge com nome — edite aqui -->
+      <div class="foto-badge">
+        <div class="foto-badge-name">Vera</div>
+        <!-- ↑ Troque pelo nome real -->
+        <div class="foto-badge-title">Consultora · CRECI 000000</div>
+        <!-- ↑ Troque pelo CRECI real -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ESTATÍSTICAS — edite os data-target e data-suffix -->
+  <!-- <div class="hero-stats">
+    <div class="stat-item" style="--i:0">
+      <div class="stat-num" data-target="320" data-suffix="+">320+</div>
+      <div class="stat-label">Imóveis Negociados</div>
+    </div>
+    <div class="stat-item" style="--i:1">
+      <div class="stat-num" data-target="98" data-suffix="%">98%</div>
+      <div class="stat-label">Clientes Satisfeitos</div>
+    </div>
+    <div class="stat-item" style="--i:2">
+      <div class="stat-num" data-target="12" data-suffix="+">12+</div>
+      <div class="stat-label">Anos de Experiência</div>
+    </div>
+  </div> -->
+</section>
+
+<!-- ════════════════════════════════════════════
+     IMÓVEIS EM DESTAQUE
+     ★ Para adicionar um imóvel: copie um bloco
+       .imovel-card completo e edite os dados
+════════════════════════════════════════════ -->
+<section class="section-imoveis" id="imoveis">
+  <div class="section-header">
+    <div>
+      <p class="section-label reveal">Portfólio</p>
+      <h2 class="section-title reveal">Imóveis em <em>Destaque</em></h2>
+    </div>
+    <a href="#contato" class="btn-ghost reveal">Ver todos →</a>
+  </div>
+
+  <!-- FILTROS — adicione/remova data-filtro conforme necessário -->
+  <div class="filtros reveal">
+    <button class="filtro-btn active" data-filtro="todos">Todos</button>
+    <button class="filtro-btn" data-filtro="venda">Venda</button>
+    <button class="filtro-btn" data-filtro="locacao">Locação</button>
+    <button class="filtro-btn" data-filtro="lancamento">Lançamento</button>
+  </div>
+
+  <div class="imoveis-grid">
+
+    <!-- ────────────────────────────────────────
+         CARD IMÓVEL 1
+         ★ TROCAR FOTO: substitua a .imovel-img-placeholder
+           por <img class="imovel-img img-zoom" src="fotos/imovel1.jpg" alt="...">
+         ★ EDITAR DADOS: atualize os data-* do card
+    ──────────────────────────────────────── -->
+    <div class="imovel-card reveal"
+         data-tipo="venda"
+         data-titulo="Apartamento 3 Quartos — Moema"
+         data-preco="R$ 980.000"
+         data-desc="Apartamento reformado com 120m², 3 dormitórios sendo 1 suíte, 2 vagas, varanda gourmet e lazer completo no edifício. Pronto para morar."
+         data-local="Moema, São Paulo — SP"
+         data-area="120m²"
+         data-quartos="3 dorm."
+         data-img="">
+      <div class="imovel-img-wrap">
+        <!-- SUBSTITUA ESTE BLOCO PELA <img> quando tiver a foto -->
+        <div class="imovel-img-placeholder">
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <span>600 × 400 px</span>
+        </div>
+        <span class="imovel-tag venda">Venda</span>
+      </div>
+      <div class="imovel-info">
+        <div class="imovel-preco">R$ 980.000</div>
+        <div class="imovel-titulo">Apartamento 3 Quartos — Moema</div>
+        <div class="imovel-local">📍 Moema, São Paulo — SP</div>
+        <div class="imovel-detalhes">
+          <div class="imovel-detalhe">🛏 <strong>3</strong> dorm.</div>
+          <div class="imovel-detalhe">📐 <strong>120</strong> m²</div>
+          <div class="imovel-detalhe">🚗 <strong>2</strong> vagas</div>
+        </div>
+      </div>
+      <div class="imovel-card-actions">
+        <button class="btn-ghost btn-ver-imovel">Ver detalhes →</button>
+        <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20no%20apartamento%20em%20Moema."
+           class="btn-primary" target="_blank"><span>WhatsApp</span></a>
+      </div>
+    </div>
+
+    <!-- CARD IMÓVEL 2 -->
+    <div class="imovel-card reveal"
+         data-tipo="venda"
+         data-titulo="Casa em Condomínio — Alphaville"
+         data-preco="R$ 1.450.000"
+         data-desc="Casa com 280m² em condomínio fechado, 4 suítes, piscina, espaço gourmet e jardim privativo. Segurança 24h e localização privilegiada."
+         data-local="Alphaville, Barueri — SP"
+         data-area="280m²"
+         data-quartos="4 suítes"
+         data-img="">
+      <div class="imovel-img-wrap">
+        <div class="imovel-img-placeholder">
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <span>600 × 400 px</span>
+        </div>
+        <span class="imovel-tag venda">Venda</span>
+      </div>
+      <div class="imovel-info">
+        <div class="imovel-preco">R$ 1.450.000</div>
+        <div class="imovel-titulo">Casa em Condomínio — Alphaville</div>
+        <div class="imovel-local">📍 Alphaville, Barueri — SP</div>
+        <div class="imovel-detalhes">
+          <div class="imovel-detalhe">🛏 <strong>4</strong> suítes</div>
+          <div class="imovel-detalhe">📐 <strong>280</strong> m²</div>
+          <div class="imovel-detalhe">🚗 <strong>4</strong> vagas</div>
+        </div>
+      </div>
+      <div class="imovel-card-actions">
+        <button class="btn-ghost btn-ver-imovel">Ver detalhes →</button>
+        <a href="https://wa.me/5511999999999" class="btn-primary" target="_blank"><span>WhatsApp</span></a>
+      </div>
+    </div>
+
+    <!-- CARD IMÓVEL 3 — LOCAÇÃO -->
+    <div class="imovel-card reveal"
+         data-tipo="locacao"
+         data-titulo="Studio Moderno — Pinheiros"
+         data-preco="R$ 3.200/mês"
+         data-desc="Studio totalmente mobiliado, 42m², andar alto com vista livre, varanda e 1 vaga. Prédio com academia e coworking. Disponível imediatamente."
+         data-local="Pinheiros, São Paulo — SP"
+         data-area="42m²"
+         data-quartos="Studio"
+         data-img="">
+      <div class="imovel-img-wrap">
+        <div class="imovel-img-placeholder">
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <span>600 × 400 px</span>
+        </div>
+        <span class="imovel-tag locacao">Locação</span>
+      </div>
+      <div class="imovel-info">
+        <div class="imovel-preco">R$ 3.200/mês</div>
+        <div class="imovel-titulo">Studio Moderno — Pinheiros</div>
+        <div class="imovel-local">📍 Pinheiros, São Paulo — SP</div>
+        <div class="imovel-detalhes">
+          <div class="imovel-detalhe">🛏 <strong>Studio</strong></div>
+          <div class="imovel-detalhe">📐 <strong>42</strong> m²</div>
+          <div class="imovel-detalhe">🚗 <strong>1</strong> vaga</div>
+        </div>
+      </div>
+      <div class="imovel-card-actions">
+        <button class="btn-ghost btn-ver-imovel">Ver detalhes →</button>
+        <a href="https://wa.me/5511999999999" class="btn-primary" target="_blank"><span>WhatsApp</span></a>
+      </div>
+    </div>
+
+    <!-- CARD IMÓVEL 4 — LANÇAMENTO -->
+    <div class="imovel-card reveal"
+         data-tipo="lancamento"
+         data-titulo="Lançamento — Vila Madalena"
+         data-preco="A partir de R$ 750.000"
+         data-desc="Novo empreendimento com unidades de 2 e 3 dormitórios, rooftop, coworking e toda infraestrutura para o seu estilo de vida. Entrega prevista para 2026."
+         data-local="Vila Madalena, São Paulo — SP"
+         data-area="Até 95m²"
+         data-quartos="2-3 dorm."
+         data-img="">
+      <div class="imovel-img-wrap">
+        <div class="imovel-img-placeholder">
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <span>600 × 400 px</span>
+        </div>
+        <span class="imovel-tag lancamento">Lançamento</span>
+      </div>
+      <div class="imovel-info">
+        <div class="imovel-preco">A partir de R$ 750.000</div>
+        <div class="imovel-titulo">Lançamento — Vila Madalena</div>
+        <div class="imovel-local">📍 Vila Madalena, São Paulo — SP</div>
+        <div class="imovel-detalhes">
+          <div class="imovel-detalhe">🛏 <strong>2-3</strong> dorm.</div>
+          <div class="imovel-detalhe">📐 <strong>65-95</strong> m²</div>
+          <div class="imovel-detalhe">🚗 <strong>1-2</strong> vagas</div>
+        </div>
+      </div>
+      <div class="imovel-card-actions">
+        <button class="btn-ghost btn-ver-imovel">Ver detalhes →</button>
+        <a href="https://wa.me/5511999999999" class="btn-primary" target="_blank"><span>WhatsApp</span></a>
+      </div>
+    </div>
+
+    <!-- ★ ADICIONAR MAIS IMÓVEIS: copie e cole um card acima ↑ -->
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SOBRE A CONSULTORA
+     ★ Edite os textos e fotos abaixo
+════════════════════════════════════════════ -->
+<section class="section-sobre" id="sobre">
+
+  <div class="sobre-img-wrap reveal">
+    <!--
+      ★ TROCAR FOTO "SOBRE":
+      Substitua o bloco abaixo por:
+      <img id="fotoSobre" src="fotos/consultora-sobre.jpg"
+           alt="[Nome] — Consultora I.Imob" class="img-zoom" />
+    -->
+    <div class="sobre-foto-placeholder">
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>Foto Consultora<br>500 × 650 px</span>
+    </div>
+
+    <!-- Edite o número de anos -->
+    <div class="sobre-gold-tag">
+      <div class="sobre-gold-tag-num">12+</div>
+      <div class="sobre-gold-tag-text">Anos no mercado</div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <p class="sobre-label">Quem somos</p>
+
+    <!-- ★ Edite o nome da consultora -->
+    <h2 class="sobre-title">
+      Conheça <em>Vera</em>
+    </h2>
+
+    <!-- ★ Edite o texto biográfico -->
+    <p class="sobre-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Sed ornare turpis in varius congue. Sed vestibulum lacus odio, a consequat nisi laoreet in. In posuere mauris felis, nec faucibus neque varius in. Aenean eu dictum libero. Ut ut quam pulvinar, condimentum risus quis, accumsan leo. Curabitur at commodo neque, eget porttitor nibh.
+    </p>
+    <p class="sobre-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Sed ornare turpis in varius congue. Sed vestibulum lacus odio, a consequat nisi laoreet in. In posuere mauris felis, nec faucibus neque varius in. Aenean eu dictum libero. Ut ut quam pulvinar, condimentum risus quis, accumsan leo. Curabitur at commodo neque, eget porttitor nibh.
+    </p>
+
+    <!-- ★ Edite o CRECI -->
+    <div class="sobre-creci">
+      <strong>CRECI:</strong> 000000-F/SP
+    </div>
+
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <a href="#contato" class="btn-primary"><span>Entrar em contato</span></a>
+      <a href="Iimob_luxo_index.html" class="btn-outline">Ver portfólio Luxo →</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════════════
+     SERVIÇOS
+     ★ Adicione/remova cards conforme necessário
+════════════════════════════════════════════ -->
+<section class="section-servicos" id="servicos">
+  <p class="section-label reveal">O que oferecemos</p>
+  <h2 class="section-title reveal" style="color: var(--black);">Nossos <em style="color:var(--navy)">Serviços</em></h2>
+
+  <div class="servicos-grid">
+
+    <div class="servico-card reveal">
+      <div class="servico-icon">🏠</div>
+      <div class="servico-title">Compra e Venda</div>
+      <div class="servico-desc">
+        Acompanhamento completo no processo de compra ou venda do seu imóvel,
+        desde a avaliação até a entrega das chaves.
+      </div>
+    </div>
+
+    <div class="servico-card reveal">
+      <div class="servico-icon">🔑</div>
+      <div class="servico-title">Locação</div>
+      <div class="servico-desc">
+        Gestão completa de locação residencial e comercial: divulgação,
+        seleção de inquilinos e acompanhamento contratual.
+      </div>
+    </div>
+
+    <div class="servico-card reveal">
+      <div class="servico-icon">📊</div>
+      <div class="servico-title">Avaliação de Imóveis</div>
+      <div class="servico-desc">
+        Laudo de avaliação mercadológica para precificar seu imóvel de
+        forma justa e competitiva no mercado atual.
+      </div>
+    </div>
+
+    <div class="servico-card reveal">
+      <div class="servico-icon">💼</div>
+      <div class="servico-title">Consultoria de Investimento</div>
+      <div class="servico-desc">
+        Análise personalizada de oportunidades imobiliárias para maximizar
+        o retorno do seu capital com segurança.
+      </div>
+    </div>
+
+    <!-- ★ Adicione mais serviços copiando um .servico-card -->
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     DEPOIMENTOS
+     ★ Edite nome, texto e tipo de cada depoimento
+════════════════════════════════════════════ -->
+<section class="section-depoimentos" id="depoimentos">
+  <p class="section-label reveal">Depoimentos</p>
+  <h2 class="section-title reveal">O que dizem nossos <em>Clientes</em></h2>
+
+  <div class="depoimentos-grid">
+
+    <div class="depoimento-card reveal">
+      <div class="depoimento-stars">★★★★★</div>
+      <p class="depoimento-text">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Sed ornare turpis in varius congue. Sed vestibulum lacus odio, a consequat nisi laoreet in. In posuere mauris felis, nec faucibus neque varius in. Aenean eu dictum libero. Ut ut quam pulvinar, condimentum risus quis, accumsan leo. Curabitur at commodo neque, eget porttitor nibh."
+      </p>
+      <div class="depoimento-autor">
+        <!--
+          ★ Para usar foto real:
+          <img class="depoimento-avatar-img" src="fotos/cliente1.jpg" alt="Cliente">
+        -->
+        <div class="depoimento-avatar">M</div>
+        <!-- ↑ Coloque a inicial do nome -->
+        <div>
+          <div class="depoimento-nome">Marcos Oliveira</div>
+          <!-- ↑ Troque pelo nome real -->
+          <div class="depoimento-tipo">Comprador — Moema</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="depoimento-card reveal">
+      <div class="depoimento-stars">★★★★★</div>
+      <p class="depoimento-text">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Sed ornare turpis in varius congue. Sed vestibulum lacus odio, a consequat nisi laoreet in. In posuere mauris felis, nec faucibus neque varius in. Aenean eu dictum libero. Ut ut quam pulvinar, condimentum risus quis, accumsan leo. Curabitur at commodo neque, eget porttitor nibh."
+      </p>
+      <div class="depoimento-autor">
+        <div class="depoimento-avatar">A</div>
+        <div>
+          <div class="depoimento-nome">Ana Paula Costa</div>
+          <div class="depoimento-tipo">Vendedora — Alphaville</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="depoimento-card reveal">
+      <div class="depoimento-stars">★★★★★</div>
+      <p class="depoimento-text">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Sed ornare turpis in varius congue. Sed vestibulum lacus odio, a consequat nisi laoreet in. In posuere mauris felis, nec faucibus neque varius in. Aenean eu dictum libero. Ut ut quam pulvinar, condimentum risus quis, accumsan leo. Curabitur at commodo neque, eget porttitor nibh."
+      </p>
+      <div class="depoimento-autor">
+        <div class="depoimento-avatar">R</div>
+        <div>
+          <div class="depoimento-nome">Ricardo Mendes</div>
+          <div class="depoimento-tipo">Investidor</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ★ Adicione mais depoimentos copiando um .depoimento-card -->
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     FORMULÁRIO DE LEADS
+     ★ Edite os textos e opções do select
+     ★ Para integrar com CRM: edite handleSubmit() no script.js
+════════════════════════════════════════════ -->
+<section class="section-lead" id="contato">
+  <div class="lead-inner">
+
+    <div class="lead-left reveal">
+      <p class="section-label">Fale conosco</p>
+      <h2>
+        Encontre o imóvel<br><em>perfeito para você</em>
+      </h2>
+      <p>
+        Preencha o formulário ao lado e receba uma consultoria personalizada
+        e gratuita. Sem compromisso, com toda a atenção que você merece.
+      </p>
+      <div class="lead-features">
+        <div class="lead-feature">Atendimento personalizado e dedicado</div>
+        <div class="lead-feature">Resposta em até 2 horas úteis</div>
+        <div class="lead-feature">Sem taxa de consultoria</div>
+        <div class="lead-feature">Mais de 320 imóveis em carteira</div>
+      </div>
+
+      <!-- ★ Troque pelo número real do WhatsApp -->
+      <div style="margin-top: 2.5rem;">
+        <a href="https://wa.me/5511986755485?text=Olá!%20Vim%20pelo%20site%20I.Imob%20e%20gostaria%20de%20uma%20consultoria."
+           class="btn-primary" target="_blank" rel="noopener">
+          <span>💬 Chamar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <form class="lead-form" id="leadForm" novalidate>
+        <div class="lead-form-title">Solicitar Consultoria</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome completo *</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label for="tel">WhatsApp *</label>
+            <input type="tel" id="tel" name="telefone" placeholder="(00) 00000-0000" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="interesse">Tipo de interesse *</label>
+          <select id="interesse" name="interesse" required>
+            <option value="">Selecione uma opção</option>
+            <option value="comprar">Quero comprar um imóvel</option>
+            <option value="vender">Quero vender meu imóvel</option>
+            <option value="alugar">Quero alugar um imóvel</option>
+            <option value="investir">Quero investir em imóveis</option>
+            <option value="avaliar">Quero avaliar meu imóvel</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="orcamento">Faixa de valor</label>
+            <select id="orcamento" name="orcamento">
+              <option value="">Orçamento aproximado</option>
+              <option>Até R$ 300 mil</option>
+              <option>R$ 300 – R$ 600 mil</option>
+              <option>R$ 600 mil – R$ 1 milhão</option>
+              <option>R$ 1M – R$ 2M</option>
+              <option>Acima de R$ 2M</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cidade">Cidade / Bairro</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Onde está buscando?" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="msg">Mensagem (opcional)</label>
+          <textarea id="msg" name="mensagem" placeholder="Conte um pouco mais sobre o que você procura..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-lead">Quero ser Atendido →</button>
+        <p class="form-privacy">🔒 Seus dados são protegidos e não serão compartilhados.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+     ★ Edite links, endereço e CRECI
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="#inicio" class="footer-logo">I<span>.</span>Imob</a>
+      <p class="footer-desc">
+        Consultoria imobiliária especializada em imóveis residenciais e de
+        investimento em São Paulo e Grande SP.
+      </p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navegação</div>
+      <ul class="footer-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#imoveis">Imóveis</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Serviços</div>
+      <ul class="footer-links">
+        <li><a href="#servicos">Compra e Venda</a></li>
+        <li><a href="#servicos">Locação</a></li>
+        <li><a href="#servicos">Avaliação</a></li>
+        <li><a href="#servicos">Investimentos</a></li>
+        <li><a href="Iimob_luxo_index.html">I.Imob Luxo ✦</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contato</div>
+      <ul class="footer-links">
+        <!-- ★ Substitua pelos dados reais -->
+        <li><a href="tel:+5511999999999">(11) 99999-9999</a></li>
+        <li><a href="mailto:contato@iimob.com.br">contato@iimob.com.br</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 I.Imob · Todos os direitos reservados</div>
+    <div class="footer-copy">Site feito por Paulo Otavio (PauloOt)</div>
+    <!-- ★ Troque pelo CRECI real -->
+    <div class="footer-creci">CRECI: 000000-F/SP</div>
+  </div>
+</footer>
+
+<!-- ════════════ MODAL DE IMÓVEL ════════════ -->
+<div id="modalImovel">
+  <div id="modalBg"></div>
+  <div class="modal-content">
+    <div class="modal-img-wrap">
+      <img id="modalImg" src="" alt="Imóvel" />
+    </div>
+    <div class="modal-body">
+      <button id="modalClose">✕</button>
+      <div class="modal-tipo"  id="modalTipo"></div>
+      <div class="modal-titulo" id="modalTitulo"></div>
+      <div class="modal-preco"  id="modalPreco"></div>
+      <div class="modal-specs">
+        <div class="modal-spec"><strong id="modalArea"></strong>Área</div>
+        <div class="modal-spec"><strong id="modalQuartos"></strong>Quartos</div>
+        <div class="modal-spec"><strong id="modalLocal"></strong>Local</div>
+      </div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <a href="https://wa.me/5511986755485" class="btn-primary" target="_blank">
+        <span>💬 Tenho Interesse</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ LIGHTBOX ════════════ -->
+<div id="lightbox">
+  <img id="lbImg" src="" alt="" />
+  <button id="lbClose">✕</button>
+</div>
+
+<!-- ════════════ WHATSAPP FLOAT ════════════ -->
+<!-- ★ Troque o número pelo real -->
+<a href="https://wa.me/5511986755485?text=Olá!%20Vim%20pelo%20site%20I.Imob%20e%20gostaria%20de%20uma%20consultoria."
+   class="whatsapp-float" target="_blank" rel="noopener" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ════════════ JAVASCRIPT ════════════ -->
+<script src="/JS/script.js"></script>
+
+</body>
+</html>
