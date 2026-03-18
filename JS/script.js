@@ -5,7 +5,7 @@
 
 /* ── SUPABASE ────────────────────────────────────────────── */
 const _SB_URL = 'https://qtbmgavyfkixvgoqmhjt.supabase.co';
-const _SB_KEY = 'sb_publishable_wbMZYr5MhopU-LIIo8Kh3Q_NC1MNrTV';
+const _SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF0Ym1nYXZ5ZmtpeHZnb3FtaGp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM4NTAzNzIsImV4cCI6MjA4OTQyNjM3Mn0.CffnPD07Cu9Jq1j8wkZK9MTuxrJffG8EpLeVFUh6z2U';
 
 function _loadSupabase() {
   return new Promise(resolve => {
