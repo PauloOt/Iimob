@@ -5,34 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>I.Imob Luxo — Alto Padrão & Exclusividade</title>
   <meta name="description" content="I.Imob Luxo: residências exclusivas, coberturas e propriedades de alto padrão selecionadas para quem exige o melhor." />
-  <meta property="og:title"       content="I.Imob Luxo — Residências de Alto Padrão" />
+  <meta property="og:title" content="I.Imob Luxo — Residências de Alto Padrão" />
   <meta property="og:description" content="Propriedades exclusivas curadas para quem exige o melhor em cada detalhe." />
-  <meta property="og:type"        content="website" />
-
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/StyleSheets/style_Iimob_luxo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Jost:wght@200;300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="StyleSheets/style_Imob_luxo.css" />
 </head>
 <body>
 
-<!-- ════════ COOKIE BANNER ════════ -->
-<div id="cookieBanner" aria-live="polite" role="dialog" aria-label="Aviso de cookies">
-  <p id="cookieText">
-    Utilizamos cookies para melhorar sua experiência.
-    Ao continuar navegando, você concorda com nossa
-    <a href="#" class="cookie-link">Política de Privacidade</a>.
-  </p>
-  <div id="cookieActions">
-    <button id="cookieDecline">Recusar</button>
-    <button id="cookieAccept">Aceitar</button>
-  </div>
+<!-- COOKIE -->
+<div id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+  <p id="cookieText">Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#" class="cookie-link">Política de Privacidade</a>.</p>
+  <div id="cookieActions"><button id="cookieDecline">Recusar</button><button id="cookieAccept">Aceitar</button></div>
 </div>
 
-<div class="cursor-dot"  id="cursorDot"></div>
+<div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- ════════ NAVEGAÇÃO ════════ -->
+<!-- NAVBAR -->
 <nav id="navbar">
   <a href="#inicio" class="nav-logo">I<span class="dot">.</span>Imob <span class="luxo-tag">Luxo</span></a>
   <ul class="nav-links">
@@ -40,12 +32,10 @@
     <li><a href="#sobre">A Consultora</a></li>
     <li><a href="#diferenciais">Diferenciais</a></li>
     <li><a href="#depoimentos">Clientes</a></li>
-    <li><a href="/Imob_index.html">I.Imob Standard</a></li>
+    <li><a href="index.html">I.Imob Standard</a></li>
     <li><a href="#contato" class="nav-cta-luxo">Consultoria Exclusiva</a></li>
   </ul>
-  <button class="nav-hamburger" id="menuToggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-hamburger" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div id="mobileMenu">
   <a href="#imoveis">Portfólio</a>
@@ -53,35 +43,39 @@
   <a href="#diferenciais">Diferenciais</a>
   <a href="#depoimentos">Clientes</a>
   <a href="#contato">Contato</a>
-  <a href="/Imob_index.html" style="font-size:1.2rem;opacity:0.6;">← I.Imob Standard</a>
+  <a href="index.html" style="opacity:.45;font-size:.8rem">← I.Imob Standard</a>
 </div>
 
-<!-- ════════ HERO LUXO ════════ -->
+<!-- HERO LUXO -->
 <section class="hero-luxo" id="inicio">
   <div class="hero-luxo-bg"></div>
+
   <div class="hero-luxo-content">
-    <div class="hero-luxo-badge">Coleção Exclusiva · Alto Padrão</div>
-    <h1 class="hero-luxo-title">Onde o luxo<br>encontra o <strong>lar.</strong></h1>
-    <div class="hero-luxo-rule"></div>
-    <p class="hero-luxo-desc">
-      Residências exclusivas, coberturas e propriedades de prestígio selecionadas para quem exige excelência em cada detalhe.
+    <div class="hero-luxo-badge reveal">◆ Coleção Exclusiva · Alto Padrão ◆</div>
+    <h1 class="hero-luxo-title reveal" style="transition-delay:.1s">
+      Onde o luxo<br>encontra o <strong>lar.</strong>
+    </h1>
+    <div class="hero-luxo-rule reveal" style="transition-delay:.18s">
+      <span>◆</span>
+    </div>
+    <p class="hero-luxo-desc reveal" style="transition-delay:.22s">
+      Residências exclusivas, coberturas e propriedades de prestígio
+      selecionadas para quem exige excelência em cada detalhe.
     </p>
-    <div class="hero-luxo-actions">
+    <div class="hero-luxo-actions reveal" style="transition-delay:.3s">
       <a href="#imoveis" class="btn-lx-primary"><span>Ver Portfólio</span></a>
       <a href="#contato" class="btn-lx-outline">Consultoria Privada</a>
     </div>
   </div>
 
-  <div class="hero-luxo-photo">
+  <div class="hero-luxo-photo reveal" style="transition-delay:.2s">
     <!--
-      ★ TROCAR FOTO: substitua por:
-      <img id="fotoConsultoraLuxo" src="fotos/consultora-luxo.jpg" alt="Consultora I.Imob Luxo" class="img-zoom" />
+      ★ TROCAR FOTO:
+      <img id="fotoConsultoraLuxo" src="fotos/consultora-luxo.jpg"
+           alt="Consultora I.Imob Luxo" class="img-zoom" />
     -->
     <div class="hero-luxo-photo-placeholder">
-      <svg width="52" height="52" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-      </svg>
+      <svg width="44" height="44" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.2"/><path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
       <span>Foto da Consultora<br>600 × 900 px</span>
     </div>
     <div class="hero-luxo-badge-foto">
@@ -91,312 +85,128 @@
   </div>
 
   <div class="hero-luxo-stats">
-    <div class="lx-stat" style="--i:0">
-      <div class="lx-stat-num" data-target="85" data-suffix="+">85+</div>
-      <div class="lx-stat-label">Imóveis de Luxo Negociados</div>
-    </div>
-    <div class="lx-stat" style="--i:1">
-      <div class="lx-stat-num" data-target="100" data-suffix="%">100%</div>
-      <div class="lx-stat-label">Discrição Garantida</div>
-    </div>
-    <div class="lx-stat" style="--i:2">
-      <div class="lx-stat-num" data-target="12" data-suffix="+">12+</div>
-      <div class="lx-stat-label">Anos de Excelência</div>
-    </div>
+    <div class="lx-stat" style="--i:0"><div class="lx-stat-num" data-target="85" data-suffix="+">85+</div><div class="lx-stat-label">Imóveis de Luxo Negociados</div></div>
+    <div class="lx-stat" style="--i:1"><div class="lx-stat-num" data-target="100" data-suffix="%">100%</div><div class="lx-stat-label">Discrição Garantida</div></div>
+    <div class="lx-stat" style="--i:2"><div class="lx-stat-num" data-target="12" data-suffix="+">12+</div><div class="lx-stat-label">Anos de Excelência</div></div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     PORTFÓLIO LUXO — CARROSSEL
-════════════════════════════════════════════ -->
+<!-- PORTFÓLIO LUXO -->
 <section class="section-imoveis-lx" id="imoveis">
-
-  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1.5rem;">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;flex-wrap:wrap;gap:1.5rem;">
     <div>
       <p class="section-label reveal">Portfólio Exclusivo</p>
-      <h2 class="reveal" style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--lx-gold-light);line-height:1.1;">
-        Propriedades <em style="font-style:italic;color:var(--lx-gold);">Selecionadas</em>
+      <h2 class="reveal" style="font-family:var(--f-display);font-size:clamp(2rem,3.5vw,3.2rem);color:var(--pearl);line-height:1.1;transition-delay:.1s">
+        Propriedades <em style="color:var(--champa)">Selecionadas</em>
       </h2>
     </div>
-    <a href="projetos.html" class="btn-lx-ghost reveal">Ver portfólio completo →</a>
+    <a href="projetos_luxo.html" class="btn-lx-ghost reveal">Ver portfólio completo →</a>
   </div>
-
-  <!-- FILTRO POR BAIRRO -->
   <div class="filtros-wrap reveal">
     <div class="filtro-bairro">
-      <input  type="text"
-              id="filtroBairroText"
-              class="filtro-bairro-input"
-              placeholder="🔍 Buscar por bairro..."
-              autocomplete="off" />
-      <select id="filtroBairroSelect" class="filtro-bairro-select">
-        <option value="">Todos os bairros</option>
-      </select>
+      <input type="text" id="filtroBairroText" class="filtro-bairro-input" placeholder="Buscar por bairro..." autocomplete="off" />
+      <select id="filtroBairroSelect" class="filtro-bairro-select"><option value="">Todos os bairros</option></select>
     </div>
   </div>
 
-  <!-- CARROSSEL LUXO -->
   <div class="carousel-wrapper">
     <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
     <div class="carousel-viewport">
       <div class="carousel-track" id="carouselTrackStd">
 
-        <!-- ★ CARD LUXO 1 -->
-        <div class="imovel-lx-card"
-             data-tipo="Cobertura Duplex"
-             data-bairro="Itaim Bibi"
-             data-titulo="Cobertura Duplex — Itaim Bibi"
-             data-preco="R$ 4.800.000"
-             data-desc="Cobertura única com 480m² de área total, terraço privativo com piscina aquecida infinita, sala de jantar com vista panorâmica 360° para São Paulo, home theater, adega climatizada para 500 garrafas e automação residencial completa. 4 suítes."
-             data-local="Itaim Bibi, São Paulo — SP"
-             data-area="480m²"
-             data-quartos="4 suítes"
-             data-img="">
-          <div class="imovel-lx-img-wrap">
-            <div class="imovel-lx-img-placeholder">
-              <svg width="44" height="44" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-              <span>700 × 480 px</span>
-            </div>
-            <div class="imovel-lx-overlay"></div>
-            <span class="imovel-lx-tag exclusivo">✦ Exclusivo</span>
-          </div>
-          <div class="imovel-lx-info">
-            <div class="imovel-lx-preco">R$ 4.800.000</div>
-            <div class="imovel-lx-titulo">Cobertura Duplex — Itaim Bibi</div>
-            <div class="imovel-lx-local">📍 Itaim Bibi, São Paulo — SP</div>
-            <div class="imovel-lx-specs">
-              <div class="imovel-lx-spec">🛏 <strong>4 suítes</strong></div>
-              <div class="imovel-lx-spec">📐 <strong>480 m²</strong></div>
-              <div class="imovel-lx-spec">🏊 <strong>Piscina</strong></div>
-            </div>
-          </div>
-          <div class="imovel-lx-card-actions">
-            <button class="btn-lx-ghost btn-ver-imovel">Ver detalhes →</button>
-            <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20na%20Cobertura%20Duplex%20no%20Itaim%20Bibi." class="btn-lx-primary" target="_blank"><span>Agendar Visita</span></a>
-          </div>
+        <div class="imovel-lx-card" data-tipo="Cobertura Duplex" data-bairro="Itaim Bibi" data-titulo="Cobertura Duplex — Itaim Bibi" data-preco="R$ 4.800.000" data-desc="Cobertura única com 480m² de área total, terraço privativo com piscina aquecida infinita, sala de jantar com vista panorâmica 360° para São Paulo, home theater, adega climatizada para 500 garrafas e automação residencial completa." data-local="Itaim Bibi, São Paulo — SP" data-area="480m²" data-quartos="4 suítes" data-img="">
+          <div class="imovel-lx-img-wrap"><div class="imovel-lx-img-placeholder"><svg width="38" height="38" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>700 × 480 px</span></div><div class="imovel-lx-overlay"></div><span class="imovel-lx-tag exclusivo">◆ Exclusivo</span></div>
+          <div class="imovel-lx-info"><div class="imovel-lx-preco">R$ 4.800.000</div><div class="imovel-lx-titulo">Cobertura Duplex — Itaim Bibi</div><div class="imovel-lx-local">Itaim Bibi, São Paulo — SP</div><div class="imovel-lx-specs"><div class="imovel-lx-spec">🛏 <strong>4 suítes</strong></div><div class="imovel-lx-spec">📐 <strong>480 m²</strong></div><div class="imovel-lx-spec">🏊 <strong>Piscina</strong></div></div></div>
+          <div class="imovel-lx-card-actions"><button class="btn-lx-ghost btn-ver-imovel">Ver detalhes →</button><a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20na%20Cobertura%20Duplex%20no%20Itaim%20Bibi." class="btn-lx-primary" target="_blank"><span>Agendar Visita</span></a></div>
         </div>
 
-        <!-- ★ CARD LUXO 2 -->
-        <div class="imovel-lx-card"
-             data-tipo="Casa Beira-Mar"
-             data-bairro="Riviera"
-             data-titulo="Casa Beira-Mar — Riviera de São Lourenço"
-             data-preco="R$ 6.200.000"
-             data-desc="Casa de 620m² com acesso privativo direto à praia. Projeto arquitetônico assinado, 5 suítes, piscina borda infinita com vista para o Atlântico, spa, sauna e área de meditação."
-             data-local="Riviera de São Lourenço — SP"
-             data-area="620m²"
-             data-quartos="5 suítes"
-             data-img="">
-          <div class="imovel-lx-img-wrap">
-            <div class="imovel-lx-img-placeholder">
-              <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-              <span>700 × 480 px</span>
-            </div>
-            <div class="imovel-lx-overlay"></div>
-            <span class="imovel-lx-tag">Venda</span>
-          </div>
-          <div class="imovel-lx-info">
-            <div class="imovel-lx-preco">R$ 6.200.000</div>
-            <div class="imovel-lx-titulo">Casa Beira-Mar — Riviera</div>
-            <div class="imovel-lx-local">📍 Riviera de São Lourenço — SP</div>
-            <div class="imovel-lx-specs">
-              <div class="imovel-lx-spec">🛏 <strong>5 suítes</strong></div>
-              <div class="imovel-lx-spec">📐 <strong>620 m²</strong></div>
-              <div class="imovel-lx-spec">🌊 <strong>Beira-mar</strong></div>
-            </div>
-          </div>
-          <div class="imovel-lx-card-actions">
-            <button class="btn-lx-ghost btn-ver-imovel">Ver detalhes →</button>
-            <a href="https://wa.me/5511999999999" class="btn-lx-primary" target="_blank"><span>Agendar Visita</span></a>
-          </div>
+        <div class="imovel-lx-card" data-tipo="Casa Beira-Mar" data-bairro="Riviera" data-titulo="Casa Beira-Mar — Riviera de São Lourenço" data-preco="R$ 6.200.000" data-desc="Casa de 620m² com acesso privativo direto à praia. Projeto arquitetônico assinado, 5 suítes, piscina borda infinita com vista para o Atlântico, spa, sauna e área de meditação." data-local="Riviera de São Lourenço — SP" data-area="620m²" data-quartos="5 suítes" data-img="">
+          <div class="imovel-lx-img-wrap"><div class="imovel-lx-img-placeholder"><svg width="38" height="38" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>700 × 480 px</span></div><div class="imovel-lx-overlay"></div><span class="imovel-lx-tag">Venda</span></div>
+          <div class="imovel-lx-info"><div class="imovel-lx-preco">R$ 6.200.000</div><div class="imovel-lx-titulo">Casa Beira-Mar — Riviera</div><div class="imovel-lx-local">Riviera de São Lourenço — SP</div><div class="imovel-lx-specs"><div class="imovel-lx-spec">🛏 <strong>5 suítes</strong></div><div class="imovel-lx-spec">📐 <strong>620 m²</strong></div><div class="imovel-lx-spec">🌊 <strong>Beira-mar</strong></div></div></div>
+          <div class="imovel-lx-card-actions"><button class="btn-lx-ghost btn-ver-imovel">Ver detalhes →</button><a href="https://wa.me/5511999999999" class="btn-lx-primary" target="_blank"><span>Agendar Visita</span></a></div>
         </div>
 
-        <!-- ★ CARD LUXO 3 -->
-        <div class="imovel-lx-card"
-             data-tipo="Apartamento Alto Padrão"
-             data-bairro="Jardins"
-             data-titulo="Apartamento — Jardins"
-             data-preco="R$ 2.400.000"
-             data-desc="Apartamento de 280m² no coração dos Jardins com pé-direito duplo na sala, cozinha italiana assinada, 3 suítes, home office e varanda privativa. Edifício com heliponto e serviços de hotel 5 estrelas."
-             data-local="Jardins, São Paulo — SP"
-             data-area="280m²"
-             data-quartos="3 suítes"
-             data-img="">
-          <div class="imovel-lx-img-wrap">
-            <div class="imovel-lx-img-placeholder">
-              <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-              <span>700 × 480 px</span>
-            </div>
-            <div class="imovel-lx-overlay"></div>
-            <span class="imovel-lx-tag">Venda</span>
-          </div>
-          <div class="imovel-lx-info">
-            <div class="imovel-lx-preco">R$ 2.400.000</div>
-            <div class="imovel-lx-titulo">Apartamento — Jardins</div>
-            <div class="imovel-lx-local">📍 Jardins, São Paulo — SP</div>
-            <div class="imovel-lx-specs">
-              <div class="imovel-lx-spec">🛏 <strong>3 suítes</strong></div>
-              <div class="imovel-lx-spec">📐 <strong>280 m²</strong></div>
-              <div class="imovel-lx-spec">🚁 <strong>Heliponto</strong></div>
-            </div>
-          </div>
-          <div class="imovel-lx-card-actions">
-            <button class="btn-lx-ghost btn-ver-imovel">Ver detalhes →</button>
-            <a href="https://wa.me/5511999999999" class="btn-lx-primary" target="_blank"><span>Agendar Visita</span></a>
-          </div>
+        <div class="imovel-lx-card" data-tipo="Apartamento Alto Padrão" data-bairro="Jardins" data-titulo="Apartamento — Jardins" data-preco="R$ 2.400.000" data-desc="Apartamento de 280m² no coração dos Jardins com pé-direito duplo na sala, cozinha italiana assinada, 3 suítes, home office e varanda privativa. Edifício com heliponto e serviços de hotel 5 estrelas." data-local="Jardins, São Paulo — SP" data-area="280m²" data-quartos="3 suítes" data-img="">
+          <div class="imovel-lx-img-wrap"><div class="imovel-lx-img-placeholder"><svg width="38" height="38" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>700 × 480 px</span></div><div class="imovel-lx-overlay"></div><span class="imovel-lx-tag">Venda</span></div>
+          <div class="imovel-lx-info"><div class="imovel-lx-preco">R$ 2.400.000</div><div class="imovel-lx-titulo">Apartamento — Jardins</div><div class="imovel-lx-local">Jardins, São Paulo — SP</div><div class="imovel-lx-specs"><div class="imovel-lx-spec">🛏 <strong>3 suítes</strong></div><div class="imovel-lx-spec">📐 <strong>280 m²</strong></div><div class="imovel-lx-spec">🚁 <strong>Heliponto</strong></div></div></div>
+          <div class="imovel-lx-card-actions"><button class="btn-lx-ghost btn-ver-imovel">Ver detalhes →</button><a href="https://wa.me/5511999999999" class="btn-lx-primary" target="_blank"><span>Agendar Visita</span></a></div>
         </div>
 
-        <!-- ★ CARD LUXO 4 -->
-        <div class="imovel-lx-card"
-             data-tipo="Lançamento Premium"
-             data-bairro="Brooklin"
-             data-titulo="Lançamento Exclusivo — Brooklin"
-             data-preco="A partir de R$ 3.100.000"
-             data-desc="Empreendimento boutique com apenas 12 unidades, projetado pelo renomado escritório [Arquiteto]. Andares duplex com terraço privativo, spa individual e vista privilegiada. Entrega 2026 com selos LEED Gold."
-             data-local="Brooklin, São Paulo — SP"
-             data-area="Até 350m²"
-             data-quartos="3-4 suítes"
-             data-img="">
-          <div class="imovel-lx-img-wrap">
-            <div class="imovel-lx-img-placeholder">
-              <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-              <span>700 × 480 px</span>
-            </div>
-            <div class="imovel-lx-overlay"></div>
-            <span class="imovel-lx-tag lancamento">Pré-Lançamento</span>
-          </div>
-          <div class="imovel-lx-info">
-            <div class="imovel-lx-preco">A partir de R$ 3.100.000</div>
-            <div class="imovel-lx-titulo">Lançamento Exclusivo — Brooklin</div>
-            <div class="imovel-lx-local">📍 Brooklin, São Paulo — SP</div>
-            <div class="imovel-lx-specs">
-              <div class="imovel-lx-spec">🛏 <strong>3-4 suítes</strong></div>
-              <div class="imovel-lx-spec">📐 <strong>até 350 m²</strong></div>
-              <div class="imovel-lx-spec">🏆 <strong>12 unid.</strong></div>
-            </div>
-          </div>
-          <div class="imovel-lx-card-actions">
-            <button class="btn-lx-ghost btn-ver-imovel">Ver detalhes →</button>
-            <a href="https://wa.me/5511999999999" class="btn-lx-primary" target="_blank"><span>Reservar</span></a>
-          </div>
+        <div class="imovel-lx-card" data-tipo="Lançamento Premium" data-bairro="Brooklin" data-titulo="Lançamento Exclusivo — Brooklin" data-preco="A partir de R$ 3.100.000" data-desc="Empreendimento boutique com apenas 12 unidades, projetado pelo renomado escritório [Arquiteto]. Andares duplex com terraço privativo, spa individual e vista privilegiada. Entrega 2026 com selos LEED Gold." data-local="Brooklin, São Paulo — SP" data-area="Até 350m²" data-quartos="3-4 suítes" data-img="">
+          <div class="imovel-lx-img-wrap"><div class="imovel-lx-img-placeholder"><svg width="38" height="38" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>700 × 480 px</span></div><div class="imovel-lx-overlay"></div><span class="imovel-lx-tag lancamento">Pré-Lançamento</span></div>
+          <div class="imovel-lx-info"><div class="imovel-lx-preco">A partir de R$ 3.100.000</div><div class="imovel-lx-titulo">Lançamento Exclusivo — Brooklin</div><div class="imovel-lx-local">Brooklin, São Paulo — SP</div><div class="imovel-lx-specs"><div class="imovel-lx-spec">🛏 <strong>3-4 suítes</strong></div><div class="imovel-lx-spec">📐 <strong>até 350 m²</strong></div><div class="imovel-lx-spec">🏆 <strong>12 unid.</strong></div></div></div>
+          <div class="imovel-lx-card-actions"><button class="btn-lx-ghost btn-ver-imovel">Ver detalhes →</button><a href="https://wa.me/5511999999999" class="btn-lx-primary" target="_blank"><span>Reservar</span></a></div>
         </div>
 
-        <!-- ★ ADICIONAR MAIS IMÓVEIS LUXO: copie um .imovel-lx-card acima
-             Lembre de adicionar data-bairro="NomeDoBairro" -->
-
-      </div><!-- /carousel-track -->
-    </div><!-- /carousel-viewport -->
+      </div>
+    </div>
     <button class="carousel-btn carousel-next" aria-label="Próximo">&#8250;</button>
-  </div><!-- /carousel-wrapper -->
-
+  </div>
   <div class="carousel-empty" id="carouselEmpty">Nenhum imóvel encontrado para este filtro.</div>
   <div class="carousel-dots" id="carouselDots"></div>
-
 </section>
 
-<!-- ════════ SOBRE (LUXO) ════════ -->
+<!-- SOBRE LUXO -->
 <section class="section-sobre-lx" id="sobre">
   <div class="sobre-lx-img-wrap reveal">
+    <!--
+      ★ TROCAR FOTO:
+      <img src="fotos/consultora-luxo-sobre.jpg" alt="Vera"
+           style="width:100%;height:100%;object-fit:cover;" class="img-zoom" />
+    -->
     <div class="sobre-lx-foto-ph">
-      <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-      </svg>
+      <svg width="34" height="34" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.2"/><path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
       <span>Foto Consultora<br>500 × 650 px</span>
     </div>
-    <div class="sobre-lx-tag">
-      <div class="sobre-lx-tag-num">R$ 50M+</div>
-      <div class="sobre-lx-tag-text">Em transações de luxo</div>
-    </div>
+    <div class="sobre-lx-tag"><div class="sobre-lx-tag-num">R$ 50M+</div><div class="sobre-lx-tag-text">Em transações de luxo</div></div>
   </div>
-  <div class="reveal">
-    <p class="sobre-lx-label">A Consultora</p>
+  <div class="reveal" style="transition-delay:.15s">
+    <p class="sobre-lx-label section-label">A Consultora</p>
     <h2 class="sobre-lx-title">Uma especialista<br>dedicada ao <em>seu nível.</em></h2>
     <p class="sobre-lx-text">Vera é especialista em imóveis de alto padrão em São Paulo, com expertise consolidada em coberturas, mansões e residências exclusivas acima de R$ 2 milhões. Discreta, comprometida e com profundo conhecimento do mercado premium.</p>
     <p class="sobre-lx-text">Cada atendimento é tratado com absoluta confidencialidade. Sua rede de contatos privilegiada garante acesso a imóveis exclusivos que nunca chegam ao mercado convencional.</p>
     <div class="sobre-lx-divider"></div>
-    <div class="sobre-lx-creci">CRECI <strong>000000-F/SP</strong> · Especialização em Alto Padrão</div>
+    <div class="sobre-lx-creci">CRECI 000000-F/SP · Especialização em Alto Padrão</div>
     <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
       <a href="#contato" class="btn-lx-primary"><span>Agendar Consultoria</span></a>
-      <a href="Iimob_index.html" class="btn-lx-outline">← I.Imob Standard</a>
+      <a href="index.html" class="btn-lx-outline">← I.Imob Standard</a>
     </div>
   </div>
 </section>
 
-<!-- ════════ DIFERENCIAIS ════════ -->
+<!-- DIFERENCIAIS -->
 <section class="section-diferenciais-lx" id="diferenciais">
   <p class="section-label reveal">Por que escolher a I.Imob Luxo</p>
-  <h2 class="reveal" style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--lx-gold-light);line-height:1.1;">
-    A diferença está nos <em style="font-style:italic;color:var(--lx-gold)">detalhes</em>
+  <h2 class="reveal" style="font-family:var(--f-display);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--pearl);line-height:1.1;margin-bottom:0;transition-delay:.1s">
+    A diferença está nos <em style="color:var(--champa)">detalhes</em>
   </h2>
   <div class="diferenciais-lx-grid">
-    <div class="diferencial-lx reveal">
-      <div class="diferencial-lx-icon">🔐</div>
-      <div class="diferencial-lx-num">01</div>
-      <div class="diferencial-lx-title">Discrição Total</div>
-      <div class="diferencial-lx-text">Absoluta confidencialidade em todas as etapas. Sua privacidade e segurança são nossa prioridade máxima.</div>
-    </div>
-    <div class="diferencial-lx reveal">
-      <div class="diferencial-lx-icon">💎</div>
-      <div class="diferencial-lx-num">02</div>
-      <div class="diferencial-lx-title">Curadoria Exclusiva</div>
-      <div class="diferencial-lx-text">Acesso a propriedades que nunca aparecem em portais. Um portfólio curado com os melhores imóveis de São Paulo.</div>
-    </div>
-    <div class="diferencial-lx reveal">
-      <div class="diferencial-lx-icon">🤝</div>
-      <div class="diferencial-lx-num">03</div>
-      <div class="diferencial-lx-title">Negociação Estratégica</div>
-      <div class="diferencial-lx-text">Experiência comprovada em negociações complexas de alto valor, sempre focada no melhor resultado para você.</div>
-    </div>
-    <div class="diferencial-lx reveal">
-      <div class="diferencial-lx-icon">🏛️</div>
-      <div class="diferencial-lx-num">04</div>
-      <div class="diferencial-lx-title">Rede Premium</div>
-      <div class="diferencial-lx-text">Relacionamento com arquitetos, decoradores, cartórios e escritórios jurídicos especializados em imóveis de luxo.</div>
-    </div>
+    <div class="diferencial-lx reveal" style="transition-delay:.05s"><div class="diferencial-lx-icon">🔐</div><div class="diferencial-lx-num">01</div><div class="diferencial-lx-title">Discrição Total</div><div class="diferencial-lx-text">Absoluta confidencialidade em todas as etapas. Sua privacidade e segurança são nossa prioridade máxima.</div></div>
+    <div class="diferencial-lx reveal" style="transition-delay:.1s"><div class="diferencial-lx-icon">◆</div><div class="diferencial-lx-num">02</div><div class="diferencial-lx-title">Curadoria Exclusiva</div><div class="diferencial-lx-text">Acesso a propriedades que nunca aparecem em portais. Um portfólio curado com os melhores imóveis de São Paulo.</div></div>
+    <div class="diferencial-lx reveal" style="transition-delay:.15s"><div class="diferencial-lx-icon">🤝</div><div class="diferencial-lx-num">03</div><div class="diferencial-lx-title">Negociação Estratégica</div><div class="diferencial-lx-text">Experiência comprovada em negociações complexas de alto valor, sempre focada no melhor resultado para você.</div></div>
+    <div class="diferencial-lx reveal" style="transition-delay:.2s"><div class="diferencial-lx-icon">🏛️</div><div class="diferencial-lx-num">04</div><div class="diferencial-lx-title">Rede Premium</div><div class="diferencial-lx-text">Relacionamento com arquitetos, decoradores, cartórios e escritórios jurídicos especializados em imóveis de luxo.</div></div>
   </div>
 </section>
 
-<!-- ════════ DEPOIMENTOS ════════ -->
+<!-- DEPOIMENTOS -->
 <section class="section-depoimentos-lx" id="depoimentos">
   <p class="section-label reveal">Clientes Exclusivos</p>
-  <h2 class="reveal" style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--lx-gold-light);line-height:1.1;">
-    O que dizem nossos <em style="font-style:italic;color:var(--lx-gold)">Clientes</em>
+  <h2 class="reveal" style="font-family:var(--f-display);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--pearl);line-height:1.1;transition-delay:.1s">
+    O que dizem nossos <em style="color:var(--champa)">Clientes</em>
   </h2>
   <div class="depoimentos-lx-grid">
-    <div class="depoimento-lx-card reveal">
-      <div class="depoimento-lx-stars">★★★★★</div>
-      <p class="depoimento-lx-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Curabitur at commodo neque, eget porttitor nibh."</p>
-      <div class="depoimento-lx-autor">
-        <div class="depoimento-lx-avatar">C</div>
-        <div><div class="depoimento-lx-nome">Carlos Eduardo — CEO</div><div class="depoimento-lx-tipo">Cobertura · Itaim Bibi</div></div>
-      </div>
-    </div>
-    <div class="depoimento-lx-card reveal">
-      <div class="depoimento-lx-stars">★★★★★</div>
-      <p class="depoimento-lx-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Curabitur at commodo neque, eget porttitor nibh."</p>
-      <div class="depoimento-lx-autor">
-        <div class="depoimento-lx-avatar">F</div>
-        <div><div class="depoimento-lx-nome">Família Steinberg</div><div class="depoimento-lx-tipo">Venda · Alphaville</div></div>
-      </div>
-    </div>
-    <div class="depoimento-lx-card reveal">
-      <div class="depoimento-lx-stars">★★★★★</div>
-      <p class="depoimento-lx-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Curabitur at commodo neque, eget porttitor nibh."</p>
-      <div class="depoimento-lx-autor">
-        <div class="depoimento-lx-avatar">P</div>
-        <div><div class="depoimento-lx-nome">Paulo Renato</div><div class="depoimento-lx-tipo">Investidor · Alto Padrão</div></div>
-      </div>
-    </div>
+    <div class="depoimento-lx-card reveal" style="transition-delay:.05s"><div class="depoimento-lx-stars">★★★★★</div><p class="depoimento-lx-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Curabitur at commodo neque, eget porttitor nibh."</p><div class="depoimento-lx-autor"><div class="depoimento-lx-avatar">C</div><div><div class="depoimento-lx-nome">Carlos Eduardo — CEO</div><div class="depoimento-lx-tipo">Cobertura · Itaim Bibi</div></div></div></div>
+    <div class="depoimento-lx-card reveal" style="transition-delay:.1s"><div class="depoimento-lx-stars">★★★★★</div><p class="depoimento-lx-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Curabitur at commodo neque, eget porttitor nibh."</p><div class="depoimento-lx-autor"><div class="depoimento-lx-avatar">F</div><div><div class="depoimento-lx-nome">Família Steinberg</div><div class="depoimento-lx-tipo">Venda · Alphaville</div></div></div></div>
+    <div class="depoimento-lx-card reveal" style="transition-delay:.15s"><div class="depoimento-lx-stars">★★★★★</div><p class="depoimento-lx-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio diam, rhoncus nec mi sed, efficitur condimentum nisl. Curabitur at commodo neque, eget porttitor nibh."</p><div class="depoimento-lx-autor"><div class="depoimento-lx-avatar">P</div><div><div class="depoimento-lx-nome">Paulo Renato</div><div class="depoimento-lx-tipo">Investidor · Alto Padrão</div></div></div></div>
   </div>
 </section>
 
-<!-- ════════ FORMULÁRIO ════════ -->
+<!-- FORMULÁRIO -->
 <section class="section-lead-lx" id="contato">
   <div class="lead-lx-inner">
     <div class="lead-lx-left reveal">
-      <p class="section-label">Consultoria Exclusiva</p>
-      <h2>Uma experiência à<br>altura do <em>seu estilo.</em></h2>
+      <p class="section-label" style="color:var(--champa)">Consultoria Exclusiva</p>
+      <h2>Uma experiência à<br><em>altura do seu estilo.</em></h2>
       <p>O atendimento I.Imob Luxo é personalizado, discreto e completamente dedicado ao seu perfil. Preencha o formulário e receba contato de nossa especialista em até 1 hora.</p>
       <div class="lead-lx-features">
         <div class="lead-lx-feature">Curadoria de imóveis exclusivos fora do mercado</div>
@@ -404,30 +214,16 @@
         <div class="lead-lx-feature">Atendimento em horários flexíveis</div>
         <div class="lead-lx-feature">Suporte jurídico e financeiro integrado</div>
       </div>
-      <div style="margin-top:2.5rem;">
-        <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20em%20um%20imóvel%20de%20alto%20padrão."
-           class="btn-lx-primary" target="_blank" rel="noopener">
-          <span>💬 WhatsApp Exclusivo</span>
-        </a>
-      </div>
+      <div style="margin-top:2.5rem;"><a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20em%20um%20imóvel%20de%20alto%20padrão." class="btn-lx-primary" target="_blank" rel="noopener"><span>💬 WhatsApp Exclusivo</span></a></div>
     </div>
-    <div class="reveal">
+    <div class="reveal" style="transition-delay:.15s">
       <form class="lead-lx-form" id="leadForm" novalidate>
         <div class="lead-lx-form-title">Solicitar <em>Consultoria Privada</em></div>
         <div class="lx-form-row">
-          <div class="lx-form-group">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
-          </div>
-          <div class="lx-form-group">
-            <label for="tel">WhatsApp</label>
-            <input type="tel" id="tel" name="telefone" placeholder="(00) 00000-0000" required />
-          </div>
+          <div class="lx-form-group"><label for="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="Seu nome" required /></div>
+          <div class="lx-form-group"><label for="tel">WhatsApp</label><input type="tel" id="tel" name="telefone" placeholder="(00) 00000-0000" required /></div>
         </div>
-        <div class="lx-form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="seu@email.com" />
-        </div>
+        <div class="lx-form-group"><label for="email">E-mail</label><input type="email" id="email" name="email" placeholder="seu@email.com" /></div>
         <div class="lx-form-group">
           <label for="interesse">Tipo de interesse</label>
           <select id="interesse" name="interesse">
@@ -440,88 +236,46 @@
           </select>
         </div>
         <div class="lx-form-row">
-          <div class="lx-form-group">
-            <label for="valor">Faixa de valor</label>
-            <select id="valor" name="valor">
-              <option value="">Orçamento</option>
-              <option>R$ 1M – R$ 2M</option>
-              <option>R$ 2M – R$ 5M</option>
-              <option>R$ 5M – R$ 10M</option>
-              <option>Acima de R$ 10M</option>
-            </select>
-          </div>
-          <div class="lx-form-group">
-            <label for="local">Localização preferida</label>
-            <input type="text" id="local" name="local" placeholder="Bairro ou cidade" />
-          </div>
+          <div class="lx-form-group"><label for="valor">Faixa de valor</label><select id="valor" name="valor"><option value="">Orçamento</option><option>R$ 1M – R$ 2M</option><option>R$ 2M – R$ 5M</option><option>R$ 5M – R$ 10M</option><option>Acima de R$ 10M</option></select></div>
+          <div class="lx-form-group"><label for="local">Localização preferida</label><input type="text" id="local" name="local" placeholder="Bairro ou cidade" /></div>
         </div>
-        <div class="lx-form-group">
-          <label for="msg">Mensagem confidencial</label>
-          <textarea id="msg" name="mensagem" placeholder="Descreva com discrição o que está buscando..."></textarea>
-        </div>
+        <div class="lx-form-group"><label for="msg">Mensagem confidencial</label><textarea id="msg" name="mensagem" placeholder="Descreva com discrição o que está buscando..."></textarea></div>
         <button type="submit" class="btn-lead-lx">Solicitar Consultoria Exclusiva →</button>
-        <p class="lx-form-privacy">🔒 Atendimento 100% confidencial. Suas informações nunca são compartilhadas.</p>
+        <p class="lx-form-privacy">◆ Atendimento 100% confidencial. Suas informações nunca são compartilhadas.</p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ════════ FOOTER ════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
-    <div>
-      <a href="#inicio" class="footer-logo">I<span class="dot">.</span>Imob Luxo</a>
-      <p class="footer-desc">Residências exclusivas e propriedades de alto padrão para quem exige excelência em cada detalhe. São Paulo e Brasil.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Portfólio</div>
-      <ul class="footer-links">
-        <li><a href="#imoveis">Coberturas</a></li>
-        <li><a href="#imoveis">Mansões</a></li>
-        <li><a href="#imoveis">Beira-Mar</a></li>
-        <li><a href="#imoveis">Lançamentos Premium</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">I.Imob</div>
-      <ul class="footer-links">
-        <li><a href="#sobre">A Consultora</a></li>
-        <li><a href="#diferenciais">Diferenciais</a></li>
-        <li><a href="#depoimentos">Clientes</a></li>
-        <li><a href="Iimob_index.html">I.Imob Standard</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contato Exclusivo</div>
-      <ul class="footer-links">
-        <li><a href="tel:+5511999999999">(11) 99999-9999</a></li>
-        <li><a href="mailto:luxo@iimob.com.br">luxo@iimob.com.br</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#contato">Consultoria Privada</a></li>
-      </ul>
-    </div>
+    <div><a href="#inicio" class="footer-logo">I<span class="dot">.</span>Imob Luxo</a><p class="footer-desc">Residências exclusivas e propriedades de alto padrão para quem exige excelência em cada detalhe. São Paulo e Brasil.</p></div>
+    <div><div class="footer-col-title">Portfólio</div><ul class="footer-links"><li><a href="#imoveis">Coberturas</a></li><li><a href="#imoveis">Mansões</a></li><li><a href="#imoveis">Beira-Mar</a></li><li><a href="#imoveis">Lançamentos Premium</a></li></ul></div>
+    <div><div class="footer-col-title">I.Imob</div><ul class="footer-links"><li><a href="#sobre">A Consultora</a></li><li><a href="#diferenciais">Diferenciais</a></li><li><a href="#depoimentos">Clientes</a></li><li><a href="index.html">I.Imob Standard</a></li></ul></div>
+    <div><div class="footer-col-title">Contato Exclusivo</div><ul class="footer-links"><li><a href="tel:+5511999999999">(11) 99999-9999 ★</a></li><li><a href="mailto:paulootavios123@gmail.com">paulootavios123@gmail.com</a></li><li><a href="#">Instagram</a></li><li><a href="#contato">Consultoria Privada</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 I.Imob Luxo · Todos os direitos reservados</div>
-    <div class="footer-copy">© Feito por Paulo Otavio</div>
+    <div class="footer-copy">Feito por Paulo Otavio</div>
     <div class="footer-creci">CRECI: 000000-F/SP · Alto Padrão</div>
   </div>
 </footer>
 
-<!-- ════════ MODAL ════════ -->
+<!-- MODAL -->
 <div id="modalImovel">
   <div id="modalBg"></div>
   <div class="modal-content">
     <div class="modal-img-wrap"><img id="modalImg" src="" alt="Imóvel Luxo" /></div>
     <div class="modal-body">
       <button id="modalClose">✕</button>
-      <div class="modal-tipo"   id="modalTipo"></div>
+      <div class="modal-tipo" id="modalTipo"></div>
       <div class="modal-titulo" id="modalTitulo"></div>
-      <div class="modal-preco"  id="modalPreco"></div>
+      <div class="modal-preco" id="modalPreco"></div>
       <div class="modal-specs">
-        <div class="modal-spec"><strong id="modalArea"></strong>Área</div>
-        <div class="modal-spec"><strong id="modalQuartos"></strong>Suítes</div>
-        <div class="modal-spec"><strong id="modalLocal"></strong>Local</div>
+        <div class="modal-spec"><strong id="modalArea"></strong><span>Área</span></div>
+        <div class="modal-spec"><strong id="modalQuartos"></strong><span>Suítes</span></div>
+        <div class="modal-spec"><strong id="modalLocal"></strong><span>Local</span></div>
       </div>
       <p class="modal-desc" id="modalDesc"></p>
       <a href="https://wa.me/5511999999999" class="btn-lx-primary" target="_blank"><span>Agendar Visita Exclusiva</span></a>
@@ -529,16 +283,7 @@
   </div>
 </div>
 
-<div id="lightbox">
-  <img id="lbImg" src="" alt="" />
-  <button id="lbClose">✕</button>
-</div>
+<div id="lightbox"><img id="lbImg" src="" alt="" /><button id="lbClose">✕</button></div>
 
-<a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20em%20um%20imóvel%20de%20luxo%20pela%20I.Imob."
-   class="whatsapp-float" target="_blank" rel="noopener" title="WhatsApp Exclusivo">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<script src="/JS/script.js"></script>
-</body>
-</html>
+<a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20em%20um%20imóvel%20de%20luxo%20pela%20I.Imob." class="whatsapp-float" target="_blank" rel="noopener" title="WhatsApp Exclusivo">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.005c6.

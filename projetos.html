@@ -5,47 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>I.Imob — Todos os Imóveis</title>
   <meta name="description" content="Portfólio completo de imóveis curados pela I.Imob. Venda, curadoria e lançamentos em São Paulo e Grande SP." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/StyleSheets/style_Imob.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="StyleSheets/style_Imob.css" />
 </head>
 <body>
 
-<div class="cursor-dot"  id="cursorDot"></div>
+<div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- ════════ NAVEGAÇÃO ════════ -->
-<nav id="navbar">
-  <a href="/Imob_index.html" class="nav-logo">I<span>.</span>Imob</a>
-  <ul class="nav-links">
-    <li><a href="/Imob_index.html#sobre">Sobre</a></li>
-    <li><a href="/Imob_index.html#servicos">Serviços</a></li>
-    <li><a href="/Imob_index.html#depoimentos">Depoimentos</a></li>
-    <li><a href="/Imob_index.html#contato" class="nav-cta">Falar com Consultora</a></li>
-  </ul>
-  <button class="nav-hamburger" id="menuToggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div id="mobileMenu">
-  <a href="/Imob_index.html#imoveis">Imóveis</a>
-  <a href="/Imob_index.html#sobre">Sobre</a>
-  <a href="/Imob_index.html#servicos">Serviços</a>
-  <a href="/Imob_index.html#depoimentos">Depoimentos</a>
-  <a href="/Imob_index.html#contato">Contato</a>
+<div id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+  <p id="cookieText">Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#" class="cookie-link">Política de Privacidade</a>.</p>
+  <div id="cookieActions"><button id="cookieDecline">Recusar</button><button id="cookieAccept">Aceitar</button></div>
 </div>
 
-<!-- ════════ HERO DA PÁGINA ════════ -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">I<span>.</span>Imob</a>
+  <ul class="nav-links">
+    <li><a href="index.html#sobre">Sobre</a></li>
+    <li><a href="index.html#servicos">Serviços</a></li>
+    <li><a href="index.html#depoimentos">Depoimentos</a></li>
+    <li><a href="index.html#contato" class="nav-cta">Falar com Consultora</a></li>
+  </ul>
+  <button class="nav-hamburger" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div id="mobileMenu">
+  <a href="index.html#imoveis">Imóveis</a>
+  <a href="index.html#sobre">Sobre</a>
+  <a href="index.html#servicos">Serviços</a>
+  <a href="index.html#contato">Contato</a>
+</div>
+
+<!-- HERO DA PÁGINA -->
 <div class="projetos-hero">
-  <a href="/Imob_index.html" class="projetos-hero-back">← Voltar ao site</a>
+  <a href="index.html" class="projetos-hero-back">← Voltar ao site</a>
   <p class="section-label">Portfólio Completo</p>
   <h1>Todos os Imóveis<br><em>em Destaque</em></h1>
   <p>Explore o portfólio completo de imóveis selecionados pela I.Imob. Filtre por tipo ou bairro para encontrar exatamente o que procura.</p>
 </div>
 
-<!-- ════════ CONTROLES DE FILTRO ════════ -->
+<!-- FILTROS STICKY -->
 <div class="projetos-controles">
   <div class="projetos-filtros-grupo">
     <button class="filtro-btn active" data-filtro="todos">Todos</button>
@@ -54,203 +54,51 @@
     <button class="filtro-btn" data-filtro="lancamento">Lançamento</button>
   </div>
   <div class="projetos-busca">
-    <input  type="text"
-            id="filtroBairroText"
-            class="filtro-bairro-input"
-            placeholder="🔍 Buscar por bairro..."
-            autocomplete="off" />
-    <select id="filtroBairroSelect" class="filtro-bairro-select">
-      <option value="">Todos os bairros</option>
-    </select>
+    <input type="text" id="filtroBairroText" class="filtro-bairro-input" placeholder="Buscar por bairro..." autocomplete="off" />
+    <select id="filtroBairroSelect" class="filtro-bairro-select"><option value="">Todos os bairros</option></select>
   </div>
   <div class="projetos-resultado" id="resultadoCount">4 imóveis encontrados</div>
 </div>
 
-<!-- ════════ GRID COMPLETO ════════ -->
+<!-- GRID -->
 <section class="projetos-section">
   <div class="projetos-grid" id="projetosGrid">
 
-    <!-- ★ CARD 1 -->
-    <div class="imovel-card reveal"
-         data-tipo="venda"
-         data-bairro="Moema"
-         data-titulo="Apartamento 3 Quartos — Moema"
-         data-preco="R$ 980.000"
-         data-desc="Apartamento reformado com 120m², 3 dormitórios sendo 1 suíte, 2 vagas, varanda gourmet e lazer completo no edifício. Pronto para morar."
-         data-local="Moema, São Paulo — SP"
-         data-area="120m²"
-         data-quartos="3 dorm."
-         data-img="">
-      <div class="imovel-img-wrap">
-        <div class="imovel-img-placeholder">
-          <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          <span>600 × 400 px</span>
-        </div>
-        <span class="imovel-tag venda">Venda</span>
-      </div>
-      <div class="imovel-info">
-        <div class="imovel-preco">R$ 980.000</div>
-        <div class="imovel-titulo">Apartamento 3 Quartos — Moema</div>
-        <div class="imovel-local">📍 Moema, São Paulo — SP</div>
-        <div class="imovel-detalhes">
-          <div class="imovel-detalhe">🛏 <strong>3</strong> dorm.</div>
-          <div class="imovel-detalhe">📐 <strong>120</strong> m²</div>
-          <div class="imovel-detalhe">🚗 <strong>2</strong> vagas</div>
-        </div>
-      </div>
-      <div class="imovel-card-actions">
-        <button class="btn-ghost btn-ver-imovel">Ver detalhes →</button>
-        <a href="https://wa.me/5511986755485?text=Olá!%20Tenho%20interesse%20no%20apartamento%20em%20Moema." class="btn-primary" target="_blank"><span>WhatsApp</span></a>
-      </div>
+    <div class="imovel-card reveal" data-tipo="venda" data-bairro="Moema" data-titulo="Apartamento 3 Quartos — Moema" data-preco="R$ 980.000" data-desc="Apartamento reformado com 120m², 3 dormitórios sendo 1 suíte, 2 vagas, varanda gourmet e lazer completo no edifício. Pronto para morar." data-local="Moema, São Paulo — SP" data-area="120m²" data-quartos="3 dorm." data-img="">
+      <div class="imovel-img-wrap"><div class="imovel-img-placeholder"><svg width="30" height="30" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>600 × 400 px</span></div><span class="imovel-tag venda">Venda</span></div>
+      <div class="imovel-info"><div class="imovel-preco">R$ 980.000</div><div class="imovel-titulo">Apartamento 3 Quartos — Moema</div><div class="imovel-local">Moema, São Paulo — SP</div><div class="imovel-detalhes"><div class="imovel-detalhe">🛏 <strong>3</strong> dorm.</div><div class="imovel-detalhe">📐 <strong>120</strong> m²</div><div class="imovel-detalhe">🚗 <strong>2</strong> vagas</div></div></div>
+      <div class="imovel-card-actions"><button class="btn-ghost btn-ver-imovel">Ver detalhes →</button><a href="https://wa.me/5511986755485?text=Olá!%20Tenho%20interesse%20no%20apartamento%20em%20Moema." class="btn-primary" target="_blank"><span>WhatsApp</span></a></div>
     </div>
 
-    <!-- ★ CARD 2 -->
-    <div class="imovel-card reveal"
-         data-tipo="venda"
-         data-bairro="Alphaville"
-         data-titulo="Casa em Condomínio — Alphaville"
-         data-preco="R$ 1.450.000"
-         data-desc="Casa com 280m² em condomínio fechado, 4 suítes, piscina, espaço gourmet e jardim privativo. Segurança 24h e localização privilegiada."
-         data-local="Alphaville, Barueri — SP"
-         data-area="280m²"
-         data-quartos="4 suítes"
-         data-img="">
-      <div class="imovel-img-wrap">
-        <div class="imovel-img-placeholder">
-          <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          <span>600 × 400 px</span>
-        </div>
-        <span class="imovel-tag venda">Venda</span>
-      </div>
-      <div class="imovel-info">
-        <div class="imovel-preco">R$ 1.450.000</div>
-        <div class="imovel-titulo">Casa em Condomínio — Alphaville</div>
-        <div class="imovel-local">📍 Alphaville, Barueri — SP</div>
-        <div class="imovel-detalhes">
-          <div class="imovel-detalhe">🛏 <strong>4</strong> suítes</div>
-          <div class="imovel-detalhe">📐 <strong>280</strong> m²</div>
-          <div class="imovel-detalhe">🚗 <strong>4</strong> vagas</div>
-        </div>
-      </div>
-      <div class="imovel-card-actions">
-        <button class="btn-ghost btn-ver-imovel">Ver detalhes →</button>
-        <a href="https://wa.me/5511986755485" class="btn-primary" target="_blank"><span>WhatsApp</span></a>
-      </div>
+    <div class="imovel-card reveal" data-tipo="venda" data-bairro="Alphaville" data-titulo="Casa em Condomínio — Alphaville" data-preco="R$ 1.450.000" data-desc="Casa com 280m² em condomínio fechado, 4 suítes, piscina, espaço gourmet e jardim privativo. Segurança 24h e localização privilegiada." data-local="Alphaville, Barueri — SP" data-area="280m²" data-quartos="4 suítes" data-img="">
+      <div class="imovel-img-wrap"><div class="imovel-img-placeholder"><svg width="30" height="30" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>600 × 400 px</span></div><span class="imovel-tag venda">Venda</span></div>
+      <div class="imovel-info"><div class="imovel-preco">R$ 1.450.000</div><div class="imovel-titulo">Casa em Condomínio — Alphaville</div><div class="imovel-local">Alphaville, Barueri — SP</div><div class="imovel-detalhes"><div class="imovel-detalhe">🛏 <strong>4</strong> suítes</div><div class="imovel-detalhe">📐 <strong>280</strong> m²</div><div class="imovel-detalhe">🚗 <strong>4</strong> vagas</div></div></div>
+      <div class="imovel-card-actions"><button class="btn-ghost btn-ver-imovel">Ver detalhes →</button><a href="https://wa.me/5511986755485" class="btn-primary" target="_blank"><span>WhatsApp</span></a></div>
     </div>
 
-    <!-- ★ CARD 3 — CURADORIA -->
-    <div class="imovel-card reveal"
-         data-tipo="curadoria"
-         data-bairro="Pinheiros"
-         data-titulo="Studio Curado — Pinheiros"
-         data-preco="R$ 3.200/mês"
-         data-desc="Selecionado pela consultora: studio totalmente mobiliado, 42m², andar alto com vista livre, varanda e 1 vaga. Prédio com academia e coworking."
-         data-local="Pinheiros, São Paulo — SP"
-         data-area="42m²"
-         data-quartos="Studio"
-         data-img="">
-      <div class="imovel-img-wrap">
-        <div class="imovel-img-placeholder">
-          <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          <span>600 × 400 px</span>
-        </div>
-        <span class="imovel-tag curadoria">Curadoria</span>
-      </div>
-      <div class="imovel-info">
-        <div class="imovel-preco">R$ 3.200/mês</div>
-        <div class="imovel-titulo">Studio Curado — Pinheiros</div>
-        <div class="imovel-local">📍 Pinheiros, São Paulo — SP</div>
-        <div class="imovel-detalhes">
-          <div class="imovel-detalhe">🛏 <strong>Studio</strong></div>
-          <div class="imovel-detalhe">📐 <strong>42</strong> m²</div>
-          <div class="imovel-detalhe">🚗 <strong>1</strong> vaga</div>
-        </div>
-      </div>
-      <div class="imovel-card-actions">
-        <button class="btn-ghost btn-ver-imovel">Ver detalhes →</button>
-        <a href="https://wa.me/5511986755485" class="btn-primary" target="_blank"><span>WhatsApp</span></a>
-      </div>
+    <div class="imovel-card reveal" data-tipo="curadoria" data-bairro="Pinheiros" data-titulo="Studio Curado — Pinheiros" data-preco="R$ 3.200/mês" data-desc="Selecionado pela consultora: studio totalmente mobiliado, 42m², andar alto com vista livre, varanda e 1 vaga. Prédio com academia e coworking." data-local="Pinheiros, São Paulo — SP" data-area="42m²" data-quartos="Studio" data-img="">
+      <div class="imovel-img-wrap"><div class="imovel-img-placeholder"><svg width="30" height="30" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>600 × 400 px</span></div><span class="imovel-tag curadoria">Curadoria</span></div>
+      <div class="imovel-info"><div class="imovel-preco">R$ 3.200/mês</div><div class="imovel-titulo">Studio Curado — Pinheiros</div><div class="imovel-local">Pinheiros, São Paulo — SP</div><div class="imovel-detalhes"><div class="imovel-detalhe">🛏 <strong>Studio</strong></div><div class="imovel-detalhe">📐 <strong>42</strong> m²</div><div class="imovel-detalhe">🚗 <strong>1</strong> vaga</div></div></div>
+      <div class="imovel-card-actions"><button class="btn-ghost btn-ver-imovel">Ver detalhes →</button><a href="https://wa.me/5511986755485" class="btn-primary" target="_blank"><span>WhatsApp</span></a></div>
     </div>
 
-    <!-- ★ CARD 4 — LANÇAMENTO -->
-    <div class="imovel-card reveal"
-         data-tipo="lancamento"
-         data-bairro="Vila Madalena"
-         data-titulo="Lançamento — Vila Madalena"
-         data-preco="A partir de R$ 750.000"
-         data-desc="Novo empreendimento com unidades de 2 e 3 dormitórios, rooftop, coworking e toda infraestrutura para o seu estilo de vida. Entrega prevista para 2026."
-         data-local="Vila Madalena, São Paulo — SP"
-         data-area="Até 95m²"
-         data-quartos="2-3 dorm."
-         data-img="">
-      <div class="imovel-img-wrap">
-        <div class="imovel-img-placeholder">
-          <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          <span>600 × 400 px</span>
-        </div>
-        <span class="imovel-tag lancamento">Lançamento</span>
-      </div>
-      <div class="imovel-info">
-        <div class="imovel-preco">A partir de R$ 750.000</div>
-        <div class="imovel-titulo">Lançamento — Vila Madalena</div>
-        <div class="imovel-local">📍 Vila Madalena, São Paulo — SP</div>
-        <div class="imovel-detalhes">
-          <div class="imovel-detalhe">🛏 <strong>2-3</strong> dorm.</div>
-          <div class="imovel-detalhe">📐 <strong>65-95</strong> m²</div>
-          <div class="imovel-detalhe">🚗 <strong>1-2</strong> vagas</div>
-        </div>
-      </div>
-      <div class="imovel-card-actions">
-        <button class="btn-ghost btn-ver-imovel">Ver detalhes →</button>
-        <a href="https://wa.me/5511986755485" class="btn-primary" target="_blank"><span>WhatsApp</span></a>
-      </div>
+    <div class="imovel-card reveal" data-tipo="lancamento" data-bairro="Vila Madalena" data-titulo="Lançamento — Vila Madalena" data-preco="A partir de R$ 750.000" data-desc="Novo empreendimento com unidades de 2 e 3 dormitórios, rooftop, coworking e toda infraestrutura para o seu estilo de vida. Entrega 2026." data-local="Vila Madalena, São Paulo — SP" data-area="Até 95m²" data-quartos="2-3 dorm." data-img="">
+      <div class="imovel-img-wrap"><div class="imovel-img-placeholder"><svg width="30" height="30" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.2"/><path d="m21 15-5-5L5 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>600 × 400 px</span></div><span class="imovel-tag lancamento">Lançamento</span></div>
+      <div class="imovel-info"><div class="imovel-preco">A partir de R$ 750.000</div><div class="imovel-titulo">Lançamento — Vila Madalena</div><div class="imovel-local">Vila Madalena, São Paulo — SP</div><div class="imovel-detalhes"><div class="imovel-detalhe">🛏 <strong>2-3</strong> dorm.</div><div class="imovel-detalhe">📐 <strong>65-95</strong> m²</div><div class="imovel-detalhe">🚗 <strong>1-2</strong> vagas</div></div></div>
+      <div class="imovel-card-actions"><button class="btn-ghost btn-ver-imovel">Ver detalhes →</button><a href="https://wa.me/5511986755485" class="btn-primary" target="_blank"><span>WhatsApp</span></a></div>
     </div>
 
-    <!-- ★ ADICIONAR MAIS IMÓVEIS AQUI
-         Copie um .imovel-card completo, edite os data-* e a tag.
-         Lembre de adicionar data-bairro="NomeDoBairro" -->
-
-    <div class="projetos-empty" id="projetosEmpty" style="display:none;">
-      Nenhum imóvel encontrado para <em id="termoBuscado"></em>.
-    </div>
-
+    <div class="projetos-empty" id="projetosEmpty" style="display:none;">Nenhum imóvel encontrado para <em id="termoBuscado"></em>.</div>
   </div>
 </section>
 
-<!-- ════════ FOOTER ════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
-    <div>
-      <a href="Iimob_index.html" class="footer-logo">I<span>.</span>Imob</a>
-      <p class="footer-desc">Consultoria imobiliária especializada em imóveis residenciais e de investimento em São Paulo e Grande SP.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Navegação</div>
-      <ul class="footer-links">
-        <li><a href="Iimob_index.html">Início</a></li>
-        <li><a href="Iimob_index.html#sobre">Sobre</a></li>
-        <li><a href="Iimob_index.html#servicos">Serviços</a></li>
-        <li><a href="Iimob_index.html#contato">Contato</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Serviços</div>
-      <ul class="footer-links">
-        <li><a href="Iimob_index.html#servicos">Compra e Venda</a></li>
-        <li><a href="Iimob_index.html#servicos">Curadoria</a></li>
-        <li><a href="Iimob_index.html#servicos">Avaliação</a></li>
-        <li><a href="Iimob_luxo_index.html">I.Imob Luxo ✦</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contato</div>
-      <ul class="footer-links">
-        <li><a href="tel:+5511986755485">(11) 98675-5485</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#f5969a9b8194819ab59c9c989a97db969a98db9787"><span class="__cf_email__" data-cfemail="0764686973667368476e6e6a68652964686a296575">[email&#160;protected]</span></a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">LinkedIn</a></li>
-      </ul>
-    </div>
+    <div><a href="index.html" class="footer-logo">I<span>.</span>Imob</a><p class="footer-desc">Consultoria imobiliária especializada em imóveis residenciais e de investimento em São Paulo e Grande SP.</p></div>
+    <div><div class="footer-col-title">Navegação</div><ul class="footer-links"><li><a href="index.html">Início</a></li><li><a href="index.html#sobre">Sobre</a></li><li><a href="index.html#servicos">Serviços</a></li><li><a href="index.html#contato">Contato</a></li></ul></div>
+    <div><div class="footer-col-title">Serviços</div><ul class="footer-links"><li><a href="index.html#servicos">Compra e Venda</a></li><li><a href="index.html#servicos">Curadoria</a></li><li><a href="index.html#servicos">Avaliação</a></li><li><a href="Imob_luxo_index.html">I.Imob Luxo ✦</a></li></ul></div>
+    <div><div class="footer-col-title">Contato</div><ul class="footer-links"><li><a href="tel:+5511986755485">(11) 98675-5485</a></li><li><a href="mailto:paulootavios123@gmail.com">paulootavios123@gmail.com</a></li><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 I.Imob · Todos os direitos reservados</div>
@@ -259,20 +107,20 @@
   </div>
 </footer>
 
-<!-- ════════ MODAL ════════ -->
+<!-- MODAL -->
 <div id="modalImovel">
   <div id="modalBg"></div>
   <div class="modal-content">
     <div class="modal-img-wrap"><img id="modalImg" src="" alt="Imóvel" /></div>
     <div class="modal-body">
       <button id="modalClose">✕</button>
-      <div class="modal-tipo"  id="modalTipo"></div>
+      <div class="modal-tipo" id="modalTipo"></div>
       <div class="modal-titulo" id="modalTitulo"></div>
-      <div class="modal-preco"  id="modalPreco"></div>
+      <div class="modal-preco" id="modalPreco"></div>
       <div class="modal-specs">
-        <div class="modal-spec"><strong id="modalArea"></strong>Área</div>
-        <div class="modal-spec"><strong id="modalQuartos"></strong>Quartos</div>
-        <div class="modal-spec"><strong id="modalLocal"></strong>Local</div>
+        <div class="modal-spec"><strong id="modalArea"></strong><span>Área</span></div>
+        <div class="modal-spec"><strong id="modalQuartos"></strong><span>Quartos</span></div>
+        <div class="modal-spec"><strong id="modalLocal"></strong><span>Local</span></div>
       </div>
       <p class="modal-desc" id="modalDesc"></p>
       <a href="https://wa.me/5511986755485" class="btn-primary" target="_blank"><span>💬 Tenho Interesse</span></a>
@@ -280,11 +128,7 @@
   </div>
 </div>
 
-<div id="lightbox">
-  <img id="lbImg" src="" alt="" />
-  <button id="lbClose">✕</button>
-</div>
+<div id="lightbox"><img id="lbImg" src="" alt="" /><button id="lbClose">✕</button></div>
 
-<a href="https://wa.me/5511986755485?text=Olá!%20Vim%20pelo%20site%20I.Imob%20e%20gostaria%20de%20uma%20consultoria."
-   class="whatsapp-float" target="_blank" rel="noopener" title="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.0
+<a href="https://wa.me/5511986755485?text=Olá!%20Vim%20pelo%20site%20I.Imob%20e%20gostaria%20de%20uma%20consultoria." class="whatsapp-float" target="_blank" rel="noopener" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.
