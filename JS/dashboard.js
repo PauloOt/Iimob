@@ -13,9 +13,9 @@ let allLeads = [];
 let charts   = {};
 
 /* ── CHART DEFAULTS ──────────────────────────────────────── */
-Chart.defaults.color          = '#666';
-Chart.defaults.borderColor    = 'rgba(240,235,226,.06)';
-Chart.defaults.font.family    = "'DM Mono', monospace";
+Chart.defaults.color          = '#94a3b8';
+Chart.defaults.borderColor    = '#e2e8f0';
+Chart.defaults.font.family    = "'Inter', system-ui, sans-serif";
 Chart.defaults.font.size      = 11;
 
 /* ================================================================
@@ -164,12 +164,12 @@ function renderTimeline() {
       datasets: [{
         label: 'Leads',
         data: counts,
-        borderColor: '#c9a84c',
-        backgroundColor: 'rgba(201,168,76,.08)',
-        borderWidth: 1.5,
+        borderColor: '#2563eb',
+        backgroundColor: 'rgba(37,99,235,.08)',
+        borderWidth: 2,
         pointRadius: 3,
         pointHoverRadius: 5,
-        pointBackgroundColor: '#c9a84c',
+        pointBackgroundColor: '#2563eb',
         tension: 0.4,
         fill: true,
       }]
@@ -178,8 +178,8 @@ function renderTimeline() {
       responsive: true,
       plugins: { legend: { display: false } },
       scales: {
-        x: { ticks: { maxTicksLimit: 10, color: '#555' }, grid: { color: 'rgba(240,235,226,.04)' } },
-        y: { beginAtZero: true, ticks: { stepSize: 1, color: '#555' }, grid: { color: 'rgba(240,235,226,.04)' } }
+        x: { ticks: { maxTicksLimit: 10, color: '#94a3b8' }, grid: { color: document.body.classList.contains('dark') ? '#1e293b' : '#f1f5f9' } },
+        y: { beginAtZero: true, ticks: { stepSize: 1, color: '#94a3b8' }, grid: { color: document.body.classList.contains('dark') ? '#1e293b' : '#f1f5f9' } }
       }
     }
   });
@@ -194,7 +194,7 @@ function renderInteresse() {
   });
   const labels = Object.keys(map);
   const data   = Object.values(map);
-  const palette = ['#c9a84c','#e8c96a','#a88830','#786020','#888','#555','#333'];
+  const palette = ['#2563eb','#16a34a','#7c3aed','#d97706','#0891b2','#dc2626','#94a3b8'];
 
   if (charts.interesse) charts.interesse.destroy();
   charts.interesse = new Chart(document.getElementById('chartInteresse'), {
@@ -204,7 +204,7 @@ function renderInteresse() {
       datasets: [{
         data,
         backgroundColor: palette.slice(0, labels.length),
-        borderColor: '#111',
+        borderColor: '#fff',
         borderWidth: 2,
       }]
     },
@@ -213,7 +213,7 @@ function renderInteresse() {
       plugins: {
         legend: {
           position: 'bottom',
-          labels: { padding: 12, boxWidth: 10, font: { size: 10 }, color: '#777' }
+          labels: { padding: 12, boxWidth: 10, font: { size: 10 }, color: '#64748b' }
         }
       }
     }
@@ -232,18 +232,18 @@ function renderOrigem() {
       labels: ['Standard', 'Luxo'],
       datasets: [{
         data: [standard, luxo],
-        backgroundColor: ['rgba(240,235,226,.1)', 'rgba(201,168,76,.18)'],
-        borderColor:     ['rgba(240,235,226,.25)', '#c9a84c'],
-        borderWidth: 1,
-        borderRadius: 2,
+        backgroundColor: ['rgba(37,99,235,.1)', 'rgba(217,119,6,.12)'],
+        borderColor:     ['#2563eb', '#d97706'],
+        borderWidth: 1.5,
+        borderRadius: 4,
       }]
     },
     options: {
       responsive: true,
       plugins: { legend: { display: false } },
       scales: {
-        y: { beginAtZero: true, ticks: { stepSize: 1, color: '#555' }, grid: { color: 'rgba(240,235,226,.04)' } },
-        x: { ticks: { color: '#777' }, grid: { display: false } }
+        y: { beginAtZero: true, ticks: { stepSize: 1, color: '#94a3b8' }, grid: { color: document.body.classList.contains('dark') ? '#1e293b' : '#f1f5f9' } },
+        x: { ticks: { color: '#94a3b8' }, grid: { display: false } }
       }
     }
   });
@@ -327,6 +327,25 @@ document.getElementById('btnExport').addEventListener('click', () => {
   a.download = `leads_iimob_${new Date().toISOString().slice(0, 10)}.csv`;
   a.click();
   URL.revokeObjectURL(url);
+});
+
+/* ── THEME TOGGLE ────────────────────────────────────────── */
+(function initTheme() {
+  const saved = localStorage.getItem('iimob_theme');
+  if (saved === 'dark') applyDark(true);
+})();
+
+function applyDark(on) {
+  document.body.classList.toggle('dark', on);
+  const btn = document.getElementById('btnTheme');
+  if (btn) btn.textContent = on ? '☀️' : '🌙';
+}
+
+document.getElementById('btnTheme').addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark');
+  localStorage.setItem('iimob_theme', isDark ? 'dark' : 'light');
+  document.getElementById('btnTheme').textContent = isDark ? '☀️' : '🌙';
+  renderCharts();
 });
 
 /* ── INIT ────────────────────────────────────────────────── */
