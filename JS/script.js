@@ -3,6 +3,29 @@
    Novidades: Carrossel, Filtro por Bairro, Página Projetos
    ============================================================ */
 
+/* ── SUPABASE ────────────────────────────────────────────── */
+const _SB_URL = 'https://qtbmgavyfkixvgoqmhjt.supabase.co';
+const _SB_KEY = 'sb_publishable_wbMZYr5MhopU-LIIo8Kh3Q_NC1MNrTV';
+
+function _loadSupabase() {
+  return new Promise(resolve => {
+    if (window.supabase) { resolve(); return; }
+    const s   = document.createElement('script');
+    s.src     = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+    s.onload  = resolve;
+    s.onerror = resolve; // falha silenciosa — não quebra o site
+    document.head.appendChild(s);
+  });
+}
+
+async function _saveLeadToSupabase(payload) {
+  await _loadSupabase();
+  if (!window.supabase) return;
+  const db = window.supabase.createClient(_SB_URL, _SB_KEY);
+  const { error } = await db.from('leads').insert([payload]);
+  if (error) console.warn('[I.Imob] Supabase:', error.message);
+}
+
 /* ============================================================
    1. CURSOR PERSONALIZADO
    ============================================================ */
@@ -108,18 +131,34 @@ function initLeadForm() {
   const form = document.getElementById('leadForm');
   if (!form) return;
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = form.querySelector('.btn-lead, .btn-lead-lx');
+    const btn      = form.querySelector('.btn-lead, .btn-lead-lx');
     const original = btn.textContent;
+    btn.textContent = '⏳ Enviando...';
+    btn.disabled    = true;
+
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    console.log('[I.Imob] Lead capturado:', data);
-    // TODO: integrar com CRM aqui
-    // fetch('/api/leads', { method: 'POST', body: JSON.stringify(data) })
+    const raw      = Object.fromEntries(formData.entries());
+
+    // Detecta origem (Standard ou Luxo) pela classe do formulário
+    const origem = form.classList.contains('lead-lx-form') ? 'luxo' : 'standard';
+
+    // Normaliza campos que têm nomes diferentes nos dois formulários
+    const payload = {
+      nome:      raw.nome      || '',
+      email:     raw.email     || '',
+      telefone:  raw.telefone  || '',
+      interesse: raw.interesse || '',
+      orcamento: raw.orcamento || raw.valor || '',
+      cidade:    raw.cidade    || raw.local || '',
+      mensagem:  raw.mensagem  || '',
+      origem,
+    };
+
+    await _saveLeadToSupabase(payload);
 
     btn.textContent = '✓ Ótimo! Entraremos em contato em breve.';
-    btn.disabled = true;
     setTimeout(() => { btn.textContent = original; btn.disabled = false; form.reset(); }, 5000);
   });
 
@@ -293,6 +332,8 @@ function initCarousel() {
 
 /* ============================================================
    7. MODAL DE IMÓVEL
+   ────────────────────────────────────────────────────────────
+   Usa event delegation para funcionar com cards do carrossel
    ============================================================ */
 function initModalImovel() {
   const modal      = document.getElementById('modalImovel');
@@ -300,21 +341,23 @@ function initModalImovel() {
   const modalClose = document.getElementById('modalClose');
   if (!modal) return;
 
-  document.querySelectorAll('.btn-ver-imovel').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.imovel-card, .imovel-lx-card');
-      if (!card) return;
-      modal.querySelector('#modalTitulo').textContent  = card.dataset.titulo  || '';
-      modal.querySelector('#modalPreco').textContent   = card.dataset.preco   || '';
-      modal.querySelector('#modalDesc').textContent    = card.dataset.desc    || '';
-      modal.querySelector('#modalImg').src             = card.dataset.img     || '';
-      modal.querySelector('#modalTipo').textContent    = card.dataset.tipo    || '';
-      modal.querySelector('#modalArea').textContent    = card.dataset.area    || '';
-      modal.querySelector('#modalQuartos').textContent = card.dataset.quartos || '';
-      modal.querySelector('#modalLocal').textContent   = card.dataset.local   || '';
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
+  // Event delegation — captura cliques em qualquer .btn-ver-imovel,
+  // inclusive os dentro do carrossel que são manipulados dinamicamente
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-ver-imovel');
+    if (!btn) return;
+    const card = btn.closest('.imovel-card, .imovel-lx-card');
+    if (!card) return;
+    document.getElementById('modalTitulo').textContent  = card.dataset.titulo  || '';
+    document.getElementById('modalPreco').textContent   = card.dataset.preco   || '';
+    document.getElementById('modalDesc').textContent    = card.dataset.desc    || '';
+    document.getElementById('modalImg').src             = card.dataset.img     || '';
+    document.getElementById('modalTipo').textContent    = card.dataset.tipo    || '';
+    document.getElementById('modalArea').textContent    = card.dataset.area    || '';
+    document.getElementById('modalQuartos').textContent = card.dataset.quartos || '';
+    document.getElementById('modalLocal').textContent   = card.dataset.local   || '';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
   });
 
   function closeModal() {
@@ -335,13 +378,14 @@ function initProjetosFilter() {
   const grid = document.getElementById('projetosGrid');
   if (!grid) return;
 
-  const cards      = Array.from(grid.querySelectorAll('.imovel-card'));
-  const emptyEl    = document.getElementById('projetosEmpty');
-  const countEl    = document.getElementById('resultadoCount');
-  const textInput  = document.getElementById('filtroBairroText');
-  const selectEl   = document.getElementById('filtroBairroSelect');
+  // Suporta tanto .imovel-card (Standard) quanto .imovel-lx-card (Luxo)
+  const cards     = Array.from(grid.querySelectorAll('.imovel-card, .imovel-lx-card'));
+  const emptyEl   = document.getElementById('projetosEmpty');
+  const countEl   = document.getElementById('resultadoCount');
+  const textInput = document.getElementById('filtroBairroText');
+  const selectEl  = document.getElementById('filtroBairroSelect');
 
-  // Popula dropdown
+  // Popula dropdown de bairros
   if (selectEl) {
     const bairros = [...new Set(cards.map(c => (c.dataset.bairro || '').trim()).filter(Boolean))].sort();
     bairros.forEach(b => {
@@ -370,13 +414,15 @@ function initProjetosFilter() {
       if (termEl) termEl.textContent = activeBairro || activeTipo;
     }
     if (countEl) {
-      countEl.textContent = shown === 1 ? '1 imóvel encontrado' : `${shown} imóveis encontrados`;
+      const label = shown === 1 ? '1 imóvel encontrado' : `${shown} imóveis encontrados`;
+      countEl.textContent = label;
     }
   }
 
-  document.querySelectorAll('.filtro-btn').forEach(btn => {
+  // Suporta tanto .filtro-btn (Standard) quanto .filtro-btn-lx (Luxo)
+  document.querySelectorAll('.filtro-btn, .filtro-btn-lx').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filtro-btn, .filtro-btn-lx').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeTipo = btn.dataset.filtro || 'todos';
       applyFilters();

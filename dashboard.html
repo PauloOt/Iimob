@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I.Imob — Dashboard</title>
+  <link rel="stylesheet" href="StyleSheets/style_dashboard.css" />
+</head>
+<body>
+
+<!-- ── LOGIN SCREEN ──────────────────────────────────────── -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">I<span>.</span>Imob</div>
+    <div class="login-subtitle">Painel da Consultora</div>
+    <form id="loginForm" novalidate>
+      <div class="login-group">
+        <label for="loginEmail">E-mail</label>
+        <input type="email" id="loginEmail" placeholder="seu@email.com" required autocomplete="email" />
+      </div>
+      <div class="login-group">
+        <label for="loginPassword">Senha</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password" />
+      </div>
+      <div id="loginError" class="login-error"></div>
+      <button type="submit" id="loginBtn">Entrar</button>
+    </form>
+  </div>
+</div>
+
+<!-- ── DASHBOARD SCREEN ───────────────────────────────────── -->
+<div id="dashboardScreen" style="display:none">
+
+  <!-- TOPBAR -->
+  <header class="dash-header">
+    <div class="dash-logo">I<span>.</span>Imob <span class="dash-tag">Dashboard</span></div>
+    <div class="dash-header-right">
+      <span id="userEmail" class="dash-user"></span>
+      <button id="logoutBtn" class="dash-logout">Sair</button>
+    </div>
+  </header>
+
+  <main class="dash-main">
+
+    <!-- PAGE TITLE -->
+    <div class="dash-page-title">
+      <h1>Leads <em>Capturados</em></h1>
+      <span id="lastUpdate" class="dash-update"></span>
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Total de Leads</div>
+        <div class="kpi-value" id="kpiTotal">—</div>
+        <div class="kpi-sub">todos os tempos</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Esta Semana</div>
+        <div class="kpi-value" id="kpiSemana">—</div>
+        <div class="kpi-sub">últimos 7 dias</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">I.Imob Standard</div>
+        <div class="kpi-value" id="kpiStandard">—</div>
+        <div class="kpi-sub">formulário Standard</div>
+      </div>
+      <div class="kpi-card kpi-gold">
+        <div class="kpi-label">I.Imob Luxo</div>
+        <div class="kpi-value" id="kpiLuxo">—</div>
+        <div class="kpi-sub">formulário Luxo</div>
+      </div>
+    </div>
+
+    <!-- CHARTS ROW -->
+    <div class="charts-grid">
+      <div class="chart-card chart-wide">
+        <div class="chart-title">Leads por dia <span class="chart-period">últimos 30 dias</span></div>
+        <canvas id="chartTimeline" height="90"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Por interesse</div>
+        <canvas id="chartInteresse"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Standard vs Luxo</div>
+        <canvas id="chartOrigem"></canvas>
+      </div>
+    </div>
+
+    <!-- LEADS TABLE -->
+    <div class="table-card">
+      <div class="table-header">
+        <div class="table-title">Todos os Leads</div>
+        <div class="table-controls">
+          <input type="text" id="tableSearch" class="table-search" placeholder="Buscar nome, e-mail, cidade..." />
+          <select id="tableFilter" class="table-filter">
+            <option value="">Todas as origens</option>
+            <option value="standard">Standard</option>
+            <option value="luxo">Luxo</option>
+          </select>
+          <button id="btnRefresh" class="btn-refresh">↺ Atualizar</button>
+          <button id="btnExport" class="btn-export">↓ Exportar CSV</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>E-mail</th>
+              <th>Interesse</th>
+              <th>Orçamento</th>
+              <th>Cidade</th>
+              <th>Origem</th>
+            </tr>
+          </thead>
+          <tbody id="leadsBody">
+            <tr><td colspan="8" class="table-state">Carregando leads...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-footer" id="tableFooter"></div>
+    </div>
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="JS/dashboard.js"></script>
+</body>
+</html>
