@@ -533,6 +533,102 @@ function initCookieBanner() {
 }
 
 /* ============================================================
+   LEAD POPUP — comentar initLeadPopup() no INIT para desativar
+   ============================================================ */
+function initLeadPopup() {
+  const overlay = document.getElementById('leadPopupOverlay');
+  if (!overlay) return;
+
+  const KEY     = 'iimob_leadpopup';
+  const DAYS    = 7;
+  const DELAY   = 20000; // 20 segundos
+
+  // Não exibir se já foi visto recentemente
+  const saved = localStorage.getItem(KEY);
+  if (saved) {
+    try {
+      const { expires } = JSON.parse(saved);
+      if (Date.now() < expires) return;
+    } catch (_) {}
+  }
+
+  const card        = document.getElementById('leadPopupCard');
+  const closeBtn    = document.getElementById('popupClose');
+  const skipBtn     = document.getElementById('popupSkip');
+  const submitBtn   = document.getElementById('popupSubmit');
+  const nameInput   = document.getElementById('popupName');
+  const contactInput= document.getElementById('popupContact');
+  const consentBox  = document.getElementById('popupConsent');
+  const channelBtns = document.querySelectorAll('.popup-channel-btn');
+  const successEl   = document.getElementById('popupSuccess');
+  const formEl      = document.getElementById('popupForm');
+
+  let channel = 'whatsapp';
+
+  function dismiss(markSeen = true) {
+    overlay.classList.remove('open');
+    if (markSeen) {
+      const expires = Date.now() + DAYS * 864e5;
+      localStorage.setItem(KEY, JSON.stringify({ expires }));
+    }
+  }
+
+  // Troca entre WhatsApp / Email
+  channelBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      channel = btn.dataset.channel;
+      channelBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      contactInput.placeholder = channel === 'whatsapp'
+        ? '(00) 00000-0000'
+        : 'seu@email.com';
+      contactInput.type = channel === 'whatsapp' ? 'tel' : 'email';
+    });
+  });
+
+  // Máscara telefone (reusa lógica existente)
+  contactInput.addEventListener('input', () => {
+    if (channel !== 'whatsapp') return;
+    let v = contactInput.value.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 6)      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+    else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+    else if (v.length > 0) v = `(${v}`;
+    contactInput.value = v;
+  });
+
+  // Submit
+  submitBtn.addEventListener('click', async () => {
+    if (!nameInput.value.trim() || !contactInput.value.trim() || !consentBox.checked) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    const payload = {
+      nome:    nameInput.value.trim(),
+      canal:   channel,
+      contato: contactInput.value.trim(),
+      origem:  'popup_consultoria',
+      pagina:  window.location.pathname,
+    };
+
+    console.log('[Luxo] Lead popup:', payload);
+    await _saveLeadToSupabase(payload);
+
+    // Mostra sucesso
+    formEl.style.display     = 'none';
+    successEl.style.display  = 'block';
+    setTimeout(() => dismiss(true), 3000);
+  });
+
+  closeBtn.addEventListener('click', () => dismiss(true));
+  skipBtn .addEventListener('click', () => dismiss(true));
+  overlay .addEventListener('click', e => { if (e.target === overlay) dismiss(true); });
+
+  // Abre após delay
+  setTimeout(() => overlay.classList.add('open'), DELAY);
+}
+
+/* ============================================================
    INIT
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -547,4 +643,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initLightbox();
   initCookieBanner();
+  initLeadPopup(); // ← comentar esta linha para desativar o popup
 });
